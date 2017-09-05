@@ -1,5 +1,5 @@
 baseurl = "/"
-languageCode = "en-us"
+languageCode = "de-de"
 DefaultContentLanguage = "de"
 enableRobotsTXT = true
 disableRSS = true
@@ -23,7 +23,7 @@ home = [ "HTML", "RSS", "JSON"]
 pre = "<h3>More</h3>"
 name = "<i class='fa fa-github'></i> Github repo"
 identifier = "ds"
-url = "https://github.com/vjeantet/hugo-theme-docdock"
+url = "https://github.com/Grembold/myHugoLP"
 weight = 10
 
 [[menu.shortcuts]]
@@ -38,6 +38,12 @@ url = "https://gohugo.io/"
 weight = 20
 
 [[menu.shortcuts]]
+name = "<i class='fa fa-bookmark'></i> Docdock Documentation"
+identifier = "DocDock"
+url = "http://docdock.netlify.com/"
+weight = 21
+
+[[menu.shortcuts]]
 name = "<i class='fa fa-bullhorn'></i> Impressum"
-url = "/impressum"
+url = "/legal_notice"
 weight = 30

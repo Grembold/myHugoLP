@@ -1,10 +1,10 @@
-+++
+ï»¿+++
 title = "Impressum"
-description = "Verantwortlich für dieses Angebot gemäß § 5 TMG / § 55 RStV
+description = "Verantwortlich fÃ¼r dieses Angebot gemÃ¤ÃŸ Â§ 5 TMG / Â§ 55 RStV"
 +++
 
 ## Impressum
-### Verantwortlich für dieses Angebot gemäß § 5 TMG / § 55 RStV:
+### Verantwortlich fÃ¼r dieses Angebot gemÃ¤ÃŸ Â§ 5 TMG / Â§ 55 RStV:
 
 ### Olaf Blume
 Franz-Schubert-Str. 2
@@ -12,7 +12,7 @@ Franz-Schubert-Str. 2
 email: olaf-petersen@qmx.de
 
 
-### Haftung für Links
+### Haftung fÃ¼r Links
 <p>Unser Angebot enth&auml;lt Links zu externen
 Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb k&ouml;nnen wir f&uuml;r diese
 fremden Inhalte auch keine Gew&auml;hr &uuml;bernehmen. F&uuml;r die Inhalte der verlinkten Seiten ist
