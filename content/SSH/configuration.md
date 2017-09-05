@@ -19,12 +19,12 @@ Zunächst müssen wir und auf dem pi mit dem Benutzer anmelder, unter dem späte
 In unserem Fall melden wir auns also unter pi an.
 Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordner und eine Datei erstellen.
 
-{mkdir ~/.ssh}
-{touch ~/.ssh/authorized_keys}
+	$ mkdir ~/.ssh
+	$ touch ~/.ssh/authorized_keys
 
-Jetzt öffnen wir diesen datei {nano ~/.ssh/authorized_keys} und kopieren den Inhal des public key hinein. Dabei müssen wir darauf achten, dass alles in einer Zeile geschrieben steht.
+Jetzt öffnen wir diesen datei `nano ~/.ssh/authorized_keys` und kopieren den Inhal des public key hinein. Dabei müssen wir darauf achten, dass alles in einer Zeile geschrieben steht.
 
 
 
-Für Olaf  mit {'--text'} läst sich ein Befehl für copy-und paste freigeben.
+Für Olaf  mit `--text` läst sich ein Befehl für copy-und paste freigeben.
 

@@ -1,8 +1,12 @@
-baseurl = "/"
+﻿baseurl = "/"
 languageCode = "de-de"
 DefaultContentLanguage = "de"
 enableRobotsTXT = true
 disableRSS = true
+
+uglyURLs = false
+relativeURLs = true
+canonifyURLs = false
 
 title = "Meine Hugo Seite"
 theme = "docdock"
