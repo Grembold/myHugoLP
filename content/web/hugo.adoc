@@ -1,0 +1,10 @@
+---
+title: "Hugo"
+date: 2017-09-03T08:14:17Z
+draft: true
+weight: 20
+---
+
+== Tipps für den Anfang
+
+Denn zu allererst steht immer das Lernen...
