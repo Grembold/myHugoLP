@@ -1,30 +1,30 @@
-+++
+ï»¿+++
 title = "Konfiguration"
 description = ""
 weight = 2
 +++
 
-Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu müssen. Muss zunächst eine Verschlüsselung eingerichtet werden.
-Hierzu gibt es je Verbindung einen öffentlichen und einen privaten schlüssel.
-Der öffentliche Schlüssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Gerät verbleibt mit dem die Verbindung zu pi aufgebaut werden soll.
+Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu mÃ¼ssen. Muss zunÃ¤chst eine VerschlÃ¼sselung eingerichtet werden.
+Hierzu gibt es je Verbindung einen Ã¶ffentlichen und einen privaten schlÃ¼ssel.
+Der Ã¶ffentliche SchlÃ¼ssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/GerÃ¤t verbleibt mit dem die Verbindung zu pi aufgebaut werden soll.
 
-Zum generieren der Schlüssel gibt es verschiedene möglichkeiten
+Zum generieren der SchlÃ¼ssel gibt es verschiedene mÃ¶glichkeiten
 
-### Schlüssen mit "putty" erstelen.
+### SchlÃ¼ssen mit "putty" erstelen.
 In der Programmsammlung von [putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.70.html) ist auch ein Key-Generator enthalte 'puttygen.exe'.
-Mit diesem lässt sich ein öffentlicher (kommte auf den pi) und ein privater (verbleibt auf dem Gerät) erstellt werden.
+Mit diesem lÃ¤sst sich ein Ã¶ffentlicher (kommte auf den pi) und ein privater (verbleibt auf dem GerÃ¤t) erstellt werden.
 
-### öffentlichen Schlüssel auf pi übertragen
-Zunächst müssen wir und auf dem pi mit dem Benutzer anmelder, unter dem später auch die Verbindung laufen soll.
+### Ã¶ffentlichen SchlÃ¼ssel auf pi Ã¼bertragen
+ZunÃ¤chst mÃ¼ssen wir und auf dem pi mit dem Benutzer anmelder, unter dem spÃ¤ter auch die Verbindung laufen soll.
 In unserem Fall melden wir auns also unter pi an.
-Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordner und eine Datei erstellen.
+FÃ¼r diesen Benutzer mÃ¼ssen wir zunÃ¤chst in seinem Homeverzeichniss einen Ordner und eine Datei erstellen.
 
 {mkdir ~/.ssh}
 {touch ~/.ssh/authorized_keys}
 
-Jetzt öffnen wir diesen datei {nano ~/.ssh/authorized_keys} und kopieren den Inhal des public key hinein. Dabei müssen wir darauf achten, dass alles in einer Zeile geschrieben steht.
+Jetzt Ã¶ffnen wir diesen datei {nano ~/.ssh/authorized_keys} und kopieren den Inhal des public key hinein. Dabei mÃ¼ssen wir darauf achten, dass alles in einer Zeile geschrieben steht.
 
 
 
-Für Olaf  mit {'--text'} läst sich ein Befehl für copy-und paste freigeben.
+FÃ¼r Olaf  mit {'--text'} lÃ¤st sich ein Befehl fÃ¼r copy-und paste freigeben.
 

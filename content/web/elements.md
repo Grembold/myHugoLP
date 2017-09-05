@@ -3,6 +3,11 @@ title = "Elements"
 weight = 50
 draft = true
 +++
+{{% alert theme="info" %}}**this** is a text{{% /alert %}}
+{{% alert theme="success" %}}**Yeahhh !** is a text{{% /alert %}}
+{{% alert theme="warning" %}}**Be carefull** is a text{{% /alert %}}
+{{% alert theme="danger" %}}**Beware !** is a text{{% /alert %}}
+
 
 <h3 class="major">Hugo shortcodes in theme</h3>
 
