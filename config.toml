@@ -1,4 +1,4 @@
-﻿baseurl = "/"
+baseurl = "/"
 languageCode = "de-de"
 DefaultContentLanguage = "de"
 enableRobotsTXT = true
