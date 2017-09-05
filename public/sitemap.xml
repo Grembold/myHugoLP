@@ -1,16 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-	<sitemap>
-	   	<loc>http://blume.goip.de/de/sitemap.xml</loc>
-		
-	   	<lastmod>2017-03-02T11:59:21-05:00</lastmod>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>http://blume.goip.de/en/sitemap.xml</loc>
-		
-	</sitemap>
-	
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/ssh/</loc>
+  </url>
+  
+  <url>
+    <loc>/ssh/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>/web/intro.de/</loc>
+    <lastmod>2017-03-02T10:54:38-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/web/intro/</loc>
+  </url>
+  
+  <url>
+    <loc>/web/work.de/</loc>
+    <lastmod>2017-03-02T11:59:05-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/web/work/</loc>
+  </url>
+  
+  <url>
+    <loc>/web/about.de/</loc>
+    <lastmod>2017-03-02T11:59:21-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/web/about/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/legal_notice/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-03-02T10:54:38-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/web/</loc>
+    <lastmod>2017-03-02T10:54:38-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
