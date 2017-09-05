@@ -9,7 +9,7 @@ draft = true
 
 Also auf dem Raspberry Pi lässt sich zum Glück inzwischen auch docker und auch swarm ausführen. 
 
-Dabei ist zu beachten dass die images aus ![docker](/static/images/moby_small.png) [DockerHub](https://hub.docker.com/) 
+Dabei ist zu beachten dass die images aus ![docker](/images/moby_small.png) [DockerHub](https://hub.docker.com/) 
 Auf dieser Seite möchte ich Anleitungen für verschiedene Bastelprojekte von mir dokumentieren.
 
 Vileicht nutze ich einen Teil als block, um den zeitlichen Fortschritt zu dokumentieren und später daraus Tutorials oder Anleitungen zu erstellen.

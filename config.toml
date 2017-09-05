@@ -49,5 +49,5 @@ weight = 21
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-bullhorn'></i> Impressum"
-url = "/legal_notice"
+url = "/impressum"
 weight = 30
