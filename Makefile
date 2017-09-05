@@ -4,7 +4,7 @@ build:
 	docker run --rm -v /home/pi/myHugoLP:/www grembold/rpi-hugo
 
 test:
-	docker run --rm -p 1313:1313 -v /home/pi/myHugoLP:/www grembold/rpi-hugo server -b http://192.168.178.141 --bind=0.0.0.0 -w -default
+	docker run --rm -p 1313:1313 -v /home/pi/myHugoLP:/www grembold/rpi-hugo server -b http://192.168.178.141 --bind=0.0.0.0 -w -D
 
 version:
 	docker run --rm grembold/rpi-hugo version
