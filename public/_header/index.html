@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Konfiguration :: Meine Hugo Seite</title>
+    <title>header :: Meine Hugo Seite</title>
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link href="/css/nucleus.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/ssh/configuration/">
+  <body class="" data-url="/_header/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -80,7 +80,7 @@
   
     
     <li data-nav-id="/ssh/" class="dd-item 
-        parent
+        
         
         parent
         ">
@@ -114,7 +114,7 @@
   
     
       <li data-nav-id="/ssh/configuration/" class="dd-item
-     active
+     
       ">
         <a href="/ssh/configuration/">
         <span>Konfiguration</span> 
@@ -359,7 +359,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/SSH/configuration.md" target="blank">
+              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/_header.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 
               </a>
@@ -380,12 +380,7 @@
 
 
 
-
-
-
- <a href='/'>DocDock für Blume</a> > <a href='/ssh/'>SSH</a> > Konfiguration
-
- 
+ <a href='/'>DocDock für Blume</a> > header
 
  
 
@@ -394,18 +389,7 @@
             </div>
             <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#schlüssen-mit-putty-erstelen">Schlüssen mit &ldquo;putty&rdquo; erstelen.</a></li>
-<li><a href="#öffentlichen-schlüssel-auf-pi-übertragen">öffentlichen Schlüssel auf pi übertragen</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -414,37 +398,13 @@
         
         <div id="body-inner">
           
-            <h1>Konfiguration</h1>
+            <h1>header</h1>
           
 
 
 
 
-
-
-<p>Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu müssen. Muss zunächst eine Verschlüsselung eingerichtet werden.
-Hierzu gibt es je Verbindung einen öffentlichen und einen privaten schlüssel.
-Der öffentliche Schlüssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Gerät verbleibt mit dem die Verbindung zu pi aufgebaut werden soll.</p>
-
-<p>Zum generieren der Schlüssel gibt es verschiedene möglichkeiten</p>
-
-<h3 id="schlüssen-mit-putty-erstelen">Schlüssen mit &ldquo;putty&rdquo; erstelen.</h3>
-
-<p>In der Programmsammlung von <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.70.html">putty</a> ist auch ein Key-Generator enthalte &lsquo;puttygen.exe&rsquo;.
-Mit diesem lässt sich ein öffentlicher (kommte auf den pi) und ein privater (verbleibt auf dem Gerät) erstellt werden.</p>
-
-<h3 id="öffentlichen-schlüssel-auf-pi-übertragen">öffentlichen Schlüssel auf pi übertragen</h3>
-
-<p>Zunächst müssen wir und auf dem pi mit dem Benutzer anmelder, unter dem später auch die Verbindung laufen soll.
-In unserem Fall melden wir auns also unter pi an.
-Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordner und eine Datei erstellen.</p>
-
-<p>{mkdir ~/.ssh}
-{touch ~/.ssh/authorized_keys}</p>
-
-<p>Jetzt öffnen wir diesen datei {nano ~/.ssh/authorized_keys} und kopieren den Inhal des public key hinein. Dabei müssen wir darauf achten, dass alles in einer Zeile geschrieben steht.</p>
-
-<p>Für Olaf  mit {&lsquo;&ndash;text&rsquo;} läst sich ein Befehl für copy-und paste freigeben.</p>
+<p>Blume Dokumentation</p>
 
 
 <footer class=" footline" >
@@ -488,40 +448,6 @@ Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordn
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -548,6 +474,22 @@ Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordn
                     
             
         
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
                         
             
@@ -629,6 +571,22 @@ Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordn
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -639,10 +597,8 @@ Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordn
 
 
         
-            <a class="nav nav-prev" href="/ssh/" title="SSH"> <i class="fa fa-chevron-left"></i></a>
         
-        
-            <a class="nav nav-next" href="/web/" title="web" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/ssh/" title="SSH" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

@@ -29,12 +29,27 @@
   </url>
   
   <url>
+    <loc>/web/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/web/about.de/</loc>
     <lastmod>2017-03-02T11:59:21-05:00</lastmod>
   </url>
   
   <url>
     <loc>/web/about/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/_header/</loc>
+    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
@@ -47,19 +62,7 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2017-03-02T10:54:38-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/web/</loc>
-    <lastmod>2017-03-02T10:54:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   

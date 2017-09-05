@@ -4,14 +4,14 @@
 	"title": "SSH",
 	"tags": [],
 	"description": "",
-	"content": " Secure Shell Mit Hilfe der Secure Shell (SSH) kann mann sich mit der Console des Raspberry Pi verbinden und Linux-Befehle auf dem pi ausführen.\n Konfiguration  Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu m�ssen. Muss zun�chst eine Verschl�sselung eingerichtet werden. Hierzu gibt es je Verbindung einen �ffentlichen und einen privaten schl�ssel. Der �ffentliche Schl�ssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Ger�t verbleibt mit dem die Verbindung zu pi aufgebaut werden soll. Zum generieren der Schl�ssel gibt es verschiedene m�glichkeiten Schl�ssen mit \u0026ldquo;putty\u0026rdquo; erstelen. In der Programmsammlung von putty ist auch ein Key-Generator enthalte \u0026lsquo;puttygen.\n "
+	"content": " Secure Shell Mit Hilfe der Secure Shell (SSH) kann mann sich mit der Console des Raspberry Pi verbinden und Linux-Befehle auf dem pi ausführen.\n Konfiguration  Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu müssen. Muss zunächst eine Verschlüsselung eingerichtet werden. Hierzu gibt es je Verbindung einen öffentlichen und einen privaten schlüssel. Der öffentliche Schlüssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Gerät verbleibt mit dem die Verbindung zu pi aufgebaut werden soll. Zum generieren der Schlüssel gibt es verschiedene möglichkeiten Schlüssen mit \u0026ldquo;putty\u0026rdquo; erstelen. In der Programmsammlung von putty ist auch ein Key-Generator enthalte \u0026lsquo;puttygen.\n "
 },
 {
 	"uri": "/ssh/configuration/",
 	"title": "Konfiguration",
 	"tags": [],
 	"description": "",
-	"content": " Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu m�ssen. Muss zun�chst eine Verschl�sselung eingerichtet werden. Hierzu gibt es je Verbindung einen �ffentlichen und einen privaten schl�ssel. Der �ffentliche Schl�ssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Ger�t verbleibt mit dem die Verbindung zu pi aufgebaut werden soll.\nZum generieren der Schl�ssel gibt es verschiedene m�glichkeiten\nSchl�ssen mit \u0026ldquo;putty\u0026rdquo; erstelen. In der Programmsammlung von putty ist auch ein Key-Generator enthalte \u0026lsquo;puttygen.exe\u0026rsquo;. Mit diesem l�sst sich ein �ffentlicher (kommte auf den pi) und ein privater (verbleibt auf dem Ger�t) erstellt werden.\n�ffentlichen Schl�ssel auf pi �bertragen Zun�chst m�ssen wir und auf dem pi mit dem Benutzer anmelder, unter dem sp�ter auch die Verbindung laufen soll. In unserem Fall melden wir auns also unter pi an. F�r diesen Benutzer m�ssen wir zun�chst in seinem Homeverzeichniss einen Ordner und eine Datei erstellen.\n{mkdir ~/.ssh} {touch ~/.ssh/authorized_keys}\nJetzt �ffnen wir diesen datei {nano ~/.ssh/authorized_keys} und kopieren den Inhal des public key hinein. Dabei m�ssen wir darauf achten, dass alles in einer Zeile geschrieben steht.\nF�r Olaf mit {\u0026lsquo;\u0026ndash;text\u0026rsquo;} l�st sich ein Befehl f�r copy-und paste freigeben.\n"
+	"content": " Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu müssen. Muss zunächst eine Verschlüsselung eingerichtet werden. Hierzu gibt es je Verbindung einen öffentlichen und einen privaten schlüssel. Der öffentliche Schlüssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Gerät verbleibt mit dem die Verbindung zu pi aufgebaut werden soll.\nZum generieren der Schlüssel gibt es verschiedene möglichkeiten\nSchlüssen mit \u0026ldquo;putty\u0026rdquo; erstelen. In der Programmsammlung von putty ist auch ein Key-Generator enthalte \u0026lsquo;puttygen.exe\u0026rsquo;. Mit diesem lässt sich ein öffentlicher (kommte auf den pi) und ein privater (verbleibt auf dem Gerät) erstellt werden.\nöffentlichen Schlüssel auf pi übertragen Zunächst müssen wir und auf dem pi mit dem Benutzer anmelder, unter dem später auch die Verbindung laufen soll. In unserem Fall melden wir auns also unter pi an. Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordner und eine Datei erstellen.\n{mkdir ~/.ssh} {touch ~/.ssh/authorized_keys}\nJetzt öffnen wir diesen datei {nano ~/.ssh/authorized_keys} und kopieren den Inhal des public key hinein. Dabei müssen wir darauf achten, dass alles in einer Zeile geschrieben steht.\nFür Olaf mit {\u0026lsquo;\u0026ndash;text\u0026rsquo;} läst sich ein Befehl für copy-und paste freigeben.\n"
 },
 {
 	"uri": "/web/intro.de/",
@@ -42,6 +42,13 @@
 	"content": "  Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.\nNullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.\n"
 },
 {
+	"uri": "/web/",
+	"title": "web",
+	"tags": [],
+	"description": "",
+	"content": "A bunch of Shortcodes are available with this theme :\nMonitoren wie lange der eingene Server verfügbar war Beispiel trashserver.net UpTimeRobot\n Einführung  Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my awesome work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.\n Intro  Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my awesome work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.\n Arbeit  Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.\n Work  Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.\n Über  \n About  Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.\n "
+},
+{
 	"uri": "/web/about.de/",
 	"title": "Über",
 	"tags": [],
@@ -56,6 +63,20 @@
 	"content": "  Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.\n"
 },
 {
+	"uri": "/",
+	"title": "DocDock für Blume",
+	"tags": [],
+	"description": "",
+	"content": " Hugo docDock theme Hugo-theme-docdock   is a theme for Hugo, a fast and modern static website engine written in Go. Hugo is often used for blogs, this theme is fully designed for documentation.\n"
+},
+{
+	"uri": "/_header/",
+	"title": "header",
+	"tags": [],
+	"description": "",
+	"content": "Blume Dokumentation\n"
+},
+{
 	"uri": "/categories/",
 	"title": "Categories",
 	"tags": [],
@@ -66,26 +87,12 @@
 	"uri": "/legal_notice/",
 	"title": "Impressum",
 	"tags": [],
-	"description": "Verantwortlich f�r dieses Angebot gemäß $ 5 TMG / $ 55 RStV",
-	"content": " Impressum Verantwortlich f�r dieses Angebot gemäß $ 5 TMG / $ 55 RStV: Olaf Blume Franz-Schubert-Str. 2 21365 Adendorf\nemail: olaf-petersen@qmx.de\nHaftung für Links Unser Angebot enth\u0026auml;lt Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb k\u0026ouml;nnen wir f\u0026uuml;r diese fremden Inhalte auch keine Gew\u0026auml;hr \u0026uuml;bernehmen. F\u0026uuml;r die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf m\u0026ouml;gliche Rechtsverst\u0026ouml;\u0026szlig;e \u0026uuml;berpr\u0026uuml;ft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.\nEine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.\n"
-},
-{
-	"uri": "/",
-	"title": "Meine Hugo Seite",
-	"tags": [],
-	"description": "",
-	"content": ""
+	"description": "Verantwortlich für dieses Angebot gemäß § 5 TMG / § 55 RStV",
+	"content": " Impressum Verantwortlich für dieses Angebot gemäß § 5 TMG / § 55 RStV: Olaf Blume Franz-Schubert-Str. 2 21365 Adendorf\nemail: olaf-petersen@qmx.de\nHaftung für Links Unser Angebot enth\u0026auml;lt Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb k\u0026ouml;nnen wir f\u0026uuml;r diese fremden Inhalte auch keine Gew\u0026auml;hr \u0026uuml;bernehmen. F\u0026uuml;r die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf m\u0026ouml;gliche Rechtsverst\u0026ouml;\u0026szlig;e \u0026uuml;berpr\u0026uuml;ft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.\nEine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.\n"
 },
 {
 	"uri": "/tags/",
 	"title": "Tags",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/web/",
-	"title": "Webs",
 	"tags": [],
 	"description": "",
 	"content": ""
