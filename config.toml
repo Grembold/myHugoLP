@@ -1,3 +1,43 @@
-baseURL = "http://example.org/"
+baseurl = "http://blume.goip.de"
+title = "DMeine Hugo Seite"
+theme = "dimension"
+#theme = "aerial"
 languageCode = "en-us"
-title = "My New Hugo Site"
+defaultContentLanguage = "de"
+enableRobotsTXT = true
+disableRSS = true
+
+[params]
+	name = "Olaf Blume"
+	title = "Blume"
+	description = '<!--[-->Bla bla Beschreibung  designed by <a href="https://html5up.net">HTML5 UP</a> and released<!--]--><br />
+                <!--[-->for free under the <a href="https://html5up.net/license">Creative Commons</a> license.<!--]-->'
+	#Disable the scrolling background by entering any string for bg_scroll. Enable by leaving bg_scroll empty.
+	bg_scroll = ""
+	logo = "fa-diamond"
+	favicon = "favicon.ico"
+	copyright = "Blume"
+	about = "Security Chief &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Never asked for this"
+	
+[[params.social]]
+  medium = "github"
+  icon = "github"
+  link = "#"
+
+[languages]
+[languages.en]
+languageName = "English"
+weight = 2
+title = "Flower"
+
+[languages.de]
+languageName = "Deutsch"
+weight = 1
+title = "Dimension"
+description = '<!--[-->A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<!--]--><br />
+                <!--[-->for free under the <a href="https://html5up.net/license">Creative Commons</a> license.<!--]-->'
+
+[[menu.main]]
+        name = "Web"
+        url  = "web/"
+        weight = 10
