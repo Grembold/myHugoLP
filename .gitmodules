@@ -1,0 +1,9 @@
+[submodule "themes/dimension"]
+	path = themes/dimension
+	url = https://github.com/sethmacleod/dimension.git
+[submodule "themes/aerial"]
+	path = themes/aerial
+	url = https://github.com/sethmacleod/aerial.git
+[submodule "themes/docdock"]
+	path = themes/docdock
+	url = https://github.com/vjeantet/hugo-theme-docdock.git
