@@ -18,5 +18,18 @@ Beispiel [trashserver.net](https://status.trashserver.net/)
 ----
 (FreeFileSync)[https://www.freefilesync.org/] solte ich mir mal ansehen, um die Daten mit der NAS bazugleichen.
 
+So, damit ich das nicht immer wieder vergesse.
+Im Repository dieser webseite sind die Themes als git submoldule eingebunden.
+Damit die aktuallisiert werden , muss folgenden ausgeführt werden
 
+    git submodule foreach git pull
+
+
+Will man ein neues theme hinzufügen, som muss man mit
+    $ git submodule add https://github.com/sethmacleod/docdock.git themes/docock
+in das eigene repository laden und anschließend in die initgit.sh integrieren
+    $ git submodule init
+    $ git submodule update
+
+    
 {{%children style="h2" description="true" %}}

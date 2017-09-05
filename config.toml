@@ -2,7 +2,7 @@ baseurl = "/"
 languageCode = "de-de"
 DefaultContentLanguage = "de"
 enableRobotsTXT = true
-disableRSS = true
+disableKinds=["RSS"]
 
 uglyURLs = false
 relativeURLs = true
