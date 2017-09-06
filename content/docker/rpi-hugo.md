@@ -3,6 +3,7 @@ title = "rpi-hugo"
 description = "hugo docker image für raspberry pi"
 date = "2017-09-04T21:03:00+02:00"
 draft = false
+weight = 10
 +++
 
 # Docker Image mit Hugo v2.6 für Raspberry pi
