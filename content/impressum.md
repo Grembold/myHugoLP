@@ -6,10 +6,10 @@ description = "Verantwortlich für dieses Angebot gemäß § 5 TMG / § 55 RStV"
 ## Impressum
 ### Verantwortlich für dieses Angebot gemäß § 5 TMG / § 55 RStV:
 
-### Olaf Blume
-Franz-Schubert-Str. 2
+### Olaf Blume  
+Franz-Schubert-Str. 2  
 21365 Adendorf  
-email: olaf-petersen@qmx.de
+email: olaf-petersen@qmx.de  
 
 
 ### Haftung für Links

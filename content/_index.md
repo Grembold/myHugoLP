@@ -5,7 +5,7 @@ date = "2017-04-24T18:36:24+02:00"
 
 +++
 
-# Olafs Dokumentation für PC und Pastelprojekte
+## Olafs Dokumentation für PC und Bastelprojekte
 
 Auf dieser Seite möchte ich Anleitungen für verschiedene Bastelprojekte von mir dokumentieren.
 

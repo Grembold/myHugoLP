@@ -11,21 +11,18 @@
   </url>
   
   <url>
-    <loc>/web/intro.de/</loc>
-    <lastmod>2017-03-02T10:54:38-05:00</lastmod>
+    <loc>/docker/rpi-hugo/</loc>
+    <lastmod>2017-09-04T21:03:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/web/intro/</loc>
+    <loc>/web/letsencrypt/</loc>
+    <lastmod>2017-09-06T21:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/web/work.de/</loc>
-    <lastmod>2017-03-02T11:59:05-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/web/work/</loc>
+    <loc>/docker/certbot/</loc>
+    <lastmod>2017-09-06T21:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -34,12 +31,8 @@
   </url>
   
   <url>
-    <loc>/web/about.de/</loc>
-    <lastmod>2017-03-02T11:59:21-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/web/about/</loc>
+    <loc>/docker/</loc>
+    <lastmod>2017-09-04T21:03:00+02:00</lastmod>
   </url>
   
   <url>
