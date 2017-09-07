@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.26" />
-    <meta name="description" content="">
+    <meta name="description" content="Raspberry Pi compatible Docker base image with Let´s Encrypt">
 
 
-    <title>Work :: Meine Hugo Seite</title>
+    <title>certbot-rpi :: Meine Hugo Seite</title>
     <link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon" />
     <link href="../../css/nucleus.css" rel="stylesheet">
     <link href="../../css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/web/work/">
+  <body class="" data-url="/docker/certbot/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -141,7 +141,7 @@
   
     
     <li data-nav-id="/web/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -152,7 +152,7 @@
         
 
           
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
           
 
         
@@ -174,131 +174,11 @@
  
   
     
-      <li data-nav-id="/web/intro.de/" class="dd-item
-     
-      ">
-        <a href="../../web/intro.de/">
-        <span>Einführung</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/web/intro/" class="dd-item
-     
-      ">
-        <a href="../../web/intro/">
-        <span>Intro</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/web/letsencrypt/" class="dd-item
      
       ">
         <a href="../../web/letsencrypt/">
         <span>Let´s Encrypt</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/web/work.de/" class="dd-item
-     
-      ">
-        <a href="../../web/work.de/">
-        <span>Arbeit</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/web/work/" class="dd-item
-     active
-      ">
-        <a href="../../web/work/">
-        <span>Work</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/web/about.de/" class="dd-item
-     
-      ">
-        <a href="../../web/about.de/">
-        <span>Über</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/web/about/" class="dd-item
-     
-      ">
-        <a href="../../web/about/">
-        <span>About</span> 
         <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
         </a></li>
      
@@ -322,7 +202,7 @@
   
     
     <li data-nav-id="/docker/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -333,7 +213,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -376,7 +256,7 @@
   
     
       <li data-nav-id="/docker/certbot/" class="dd-item
-     
+     active
       ">
         <a href="../../docker/certbot/">
         <span>certbot-rpi</span> 
@@ -409,7 +289,7 @@
             
                 <li class="" role="">
                     
-                    <a href="../../showcase"><i class='fa fa-camera'></i> Showcases</a>
+                    <a href="../../showcase/"><i class='fa fa-camera'></i> Showcases</a>
                     
                 </li>
             
@@ -427,7 +307,7 @@
             
                 <li class="" role="">
                     
-                    <a href="../../impressum"><i class='fa fa-bullhorn'></i> Impressum</a>
+                    <a href="../../impressum/"><i class='fa fa-bullhorn'></i> Impressum</a>
                     
                 </li>
             
@@ -460,7 +340,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/web/work.md" target="blank">
+              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/docker/certbot.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 
               </a>
@@ -484,7 +364,7 @@
 
 
 
- <a href='../../'>DocDock für Blume</a> > <a href='../../web/'>web</a> > Work
+ <a href='../../'>DocDock für Blume</a> > <a href='../../docker/'>docker</a> > certbot-rpi
 
  
 
@@ -495,7 +375,18 @@
             </div>
             <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#was-ist-let-s-encrypt-https-letsencrypt-org">Was ist <a href="https://letsencrypt.org/">Let´s Encrypt</a>?</a>
+<ul>
+<li><a href="#pull-des-image">Pull des Image</a></li>
+<li><a href="#aktuelle-version-von-let-s-encrypt-certbot-abrufen">Aktuelle Version von Let´s Encrypt certbot abrufen</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -504,23 +395,35 @@
         
         <div id="body-inner">
           
-            <h1>Work</h1>
+            <h1>certbot-rpi</h1>
           
 
 
 
 
-<p>
-<figure class="image main">
-    
-        <img src="../../images/pic02.jpg" />
-    
-    
-</figure>
 
-Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
 
-<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+<p>Um sein aktuelles SSL-Zertifikat für meine Webseite zu erhalten, ist es am einfachsten auf ein vorhandenes Docker Image zurückzugreifen.</p>
+
+<h2 id="was-ist-let-s-encrypt-https-letsencrypt-org">Was ist <a href="https://letsencrypt.org/">Let´s Encrypt</a>?</h2>
+
+<p>Let´s Encrypt ist eine Zertifizierungsstelle die die erstellung von kostenlosen TLS-Zertifikaten anbietet. Ziel des Projektes ist es, jeden Internetdienst eine einfache Verschlüsselung anbieten kann.
+Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten certbot automatisiert.</p>
+
+<p><a href="https://hub.docker.com/r/bcecchinato/certbot-rpi/">certbot-rpi on DockerHub</a>
+<a href="https://github.com/bcecchinato/certbot-rpi">certbot-rpi on GitHub</a></p>
+
+<p>Hier eine kurze anleitung, wie das Docker Image verwendet wird.</p>
+
+<h3 id="pull-des-image">Pull des Image</h3>
+
+<pre><code>docker pull pull bcecchinato/certbot-rpi
+</code></pre>
+
+<h3 id="aktuelle-version-von-let-s-encrypt-certbot-abrufen">Aktuelle Version von Let´s Encrypt certbot abrufen</h3>
+
+<pre><code>docker run -it --rm bcecchinato/certbot-rpi --help
+</code></pre>
 
 
 <footer class=" footline" >
@@ -599,6 +502,38 @@ Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend s
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -632,137 +567,6 @@ Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend s
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -785,10 +589,10 @@ Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend s
 
 
         
-            <a class="nav nav-prev" href="../../web/work.de/" title="Arbeit"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="../../docker/rpi-hugo/" title="rpi-hugo"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="../../web/about.de/" title="Über" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="../../docker/rpi-hugo/" title="rpi-hugo" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

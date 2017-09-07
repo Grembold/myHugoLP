@@ -1,7 +1,7 @@
 +++
 title = "Work"
 weight = 20
-draft = false
+draft = true
 +++
 
 {{< figure class="image main" src="/images/pic02.jpg" >}}

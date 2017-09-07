@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.26" />
-    <meta name="description" content="">
+    <meta name="description" content="Mit Let´s Encrypt ein Zertifikat erstellen">
 
 
-    <title>Work :: Meine Hugo Seite</title>
+    <title>Let´s Encrypt :: Meine Hugo Seite</title>
     <link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon" />
     <link href="../../css/nucleus.css" rel="stylesheet">
     <link href="../../css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/web/work/">
+  <body class="" data-url="/web/letsencrypt/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -174,131 +174,11 @@
  
   
     
-      <li data-nav-id="/web/intro.de/" class="dd-item
-     
-      ">
-        <a href="../../web/intro.de/">
-        <span>Einführung</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/web/intro/" class="dd-item
-     
-      ">
-        <a href="../../web/intro/">
-        <span>Intro</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
       <li data-nav-id="/web/letsencrypt/" class="dd-item
-     
+     active
       ">
         <a href="../../web/letsencrypt/">
         <span>Let´s Encrypt</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/web/work.de/" class="dd-item
-     
-      ">
-        <a href="../../web/work.de/">
-        <span>Arbeit</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/web/work/" class="dd-item
-     active
-      ">
-        <a href="../../web/work/">
-        <span>Work</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/web/about.de/" class="dd-item
-     
-      ">
-        <a href="../../web/about.de/">
-        <span>Über</span> 
-        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
-        </a></li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/web/about/" class="dd-item
-     
-      ">
-        <a href="../../web/about/">
-        <span>About</span> 
         <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
         </a></li>
      
@@ -409,7 +289,7 @@
             
                 <li class="" role="">
                     
-                    <a href="../../showcase"><i class='fa fa-camera'></i> Showcases</a>
+                    <a href="../../showcase/"><i class='fa fa-camera'></i> Showcases</a>
                     
                 </li>
             
@@ -427,7 +307,7 @@
             
                 <li class="" role="">
                     
-                    <a href="../../impressum"><i class='fa fa-bullhorn'></i> Impressum</a>
+                    <a href="../../impressum/"><i class='fa fa-bullhorn'></i> Impressum</a>
                     
                 </li>
             
@@ -460,7 +340,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/web/work.md" target="blank">
+              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/web/letsencrypt.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 
               </a>
@@ -484,7 +364,7 @@
 
 
 
- <a href='../../'>DocDock für Blume</a> > <a href='../../web/'>web</a> > Work
+ <a href='../../'>DocDock für Blume</a> > <a href='../../web/'>web</a> > Let´s Encrypt
 
  
 
@@ -495,7 +375,25 @@
             </div>
             <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#certbot-installieren">certbot installieren</a></li>
+<li><a href="#let-s-encrypt-zertifikate-für-nginx-installieren">Let´s Encrypt Zertifikate für nginx installieren</a></li>
+</ul></li>
+<li><a href="#https-acme-v01-api-letsencrypt-org-directory"><a href="https://acme-v01.api.letsencrypt.org/directory">https://acme-v01.api.letsencrypt.org/directory</a></a></li>
+<li><a href="#our-work-to-encrypt-the-web-protect-its-users-and-defend-digital-rights">our work to encrypt the web, protect its users and defend digital rights.</a>
+<ul>
+<li><a href="#zertifikat-und-konfiguration-testen">Zertifikat und Konfiguration testen</a></li>
+<li><a href="#zertifikate-automatisch-erneuern-lassen">Zertifikate automatisch erneuern lassen</a></li>
+<li><a href="#quellen">Quellen</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -504,23 +402,113 @@
         
         <div id="body-inner">
           
-            <h1>Work</h1>
+            <h1>Let´s Encrypt</h1>
           
 
 
 
 
-<p>
-<figure class="image main">
-    
-        <img src="../../images/pic02.jpg" />
-    
-    
-</figure>
 
-Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
 
-<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+<h3 id="certbot-installieren">certbot installieren</h3>
+
+<p>Wie das Docker image isntalleirt wird habe ich bereits [hier]/docker/certbot/ beschrieben. Nun geht es darum ein Zertifikat für die eigene Daomein zu erhalten.</p>
+
+<h3 id="let-s-encrypt-zertifikate-für-nginx-installieren">Let´s Encrypt Zertifikate für nginx installieren</h3>
+
+<div class="alert 
+alert-warning"
+ 
+role="alert">Erst wenn Sie sicher sind, dass alles klappt, entfernen Sie zuletzt die Option &ndash;staging und wiederholen das Kommando nochmals zur Installation der endgültigen Zertifikate.</div>
+
+
+<p>Das Abrufen der Zertifikate läuft folgender massen ab:
+* Der eigene Webserver läuft und ist unter meineDomain:80 erreichbar.
+* Certbot erstell im www-Verzeichniss des Servers einen versteckten Ordner <code>.well-known</code> und einige Dateien
+* certbot prüft bei Let´s Encrypt, ob diese Dateien errecihbar sind.
+* ist dies erfogreich, wird das Zertifikat unter <code>/etc/letsencrypt/meineDomain</code>abgelegt.</p>
+
+<p>Damit dies nun über das Docker Image funktioniert, müssen wir diesem zwei Verzeichnisse mitgeben. Das erste ist das www-Verzeichniss vom Webserver und das zweite ein verzeichniss, indem der certbot die erstellten Zertifikate ablegen kann.</p>
+
+<pre><code>docker run --rm -v $CERTS_DIR:/etc/letsencrypt -p 80:80 --name certbot napnap75/rpi-certbot:latest certbot certonly --standalone --standalone-supported-challenges http-01 -t -n --agree-tos -m $EMAIL -d $HOST
+</code></pre>
+
+<p>Startet den certbot im &ldquo;interaktiven&rdquo; modus
+    docker run -it &ndash;rm \
+    -v /home/pi/myHugoLP/public:/var/www/ <br />
+    -v /home/pi/nginx-proxy/certs:/etc/letsencrypt &ndash;name certbot bcecchinato/certbot-rpi <br />
+    certonly &ndash;webroot -w /var/www/ -d meineDomain.de -d www.meineDomain.de</p>
+
+<p>Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator webroot, Installer None
+Enter email address (used for urgent renewal and security notices) (Enter &lsquo;c&rsquo; to
+cancel):</p>
+
+<hr />
+
+<p>Please read the Terms of Service at
+<a href="https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf">https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf</a>. You must agree
+in order to register with the ACME server at</p>
+
+<h2 id="https-acme-v01-api-letsencrypt-org-directory"><a href="https://acme-v01.api.letsencrypt.org/directory">https://acme-v01.api.letsencrypt.org/directory</a></h2>
+
+<p>(A)gree/&copy;ancel: A</p>
+
+<hr />
+
+<p>Would you be willing to share your email address with the Electronic Frontier
+Foundation, a founding partner of the Let&rsquo;s Encrypt project and the non-profit
+organization that develops Certbot? We&rsquo;d like to send you email about EFF and</p>
+
+<h2 id="our-work-to-encrypt-the-web-protect-its-users-and-defend-digital-rights">our work to encrypt the web, protect its users and defend digital rights.</h2>
+
+<p>(Y)es/(N)o: N
+Obtaining a new certificate
+Performing the following challenges:
+http-01 challenge for meineDomain.de
+Using the webroot path /var/www for all unmatched domains.
+Waiting for verification&hellip;
+Cleaning up challenges</p>
+
+<p>IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/meineDomain.de/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/meineDomain.de/privkey.pem
+   Your cert will expire on 2017-12-01. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot
+   again. To non-interactively renew <em>all</em> of your certificates, run
+   &ldquo;certbot renew&rdquo;
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
+ - If you like Certbot, please consider supporting our work by:</p>
+
+<p>Donating to ISRG / Let&rsquo;s Encrypt:   <a href="https://letsencrypt.org/donate">https://letsencrypt.org/donate</a>
+   Donating to EFF:                    <a href="https://eff.org/donate-le">https://eff.org/donate-le</a></p>
+
+<h3 id="zertifikat-und-konfiguration-testen">Zertifikat und Konfiguration testen</h3>
+
+<p>HTTPS-Konfiguration noch über die Seite <a href="https://www.ssllabs.com">https://www.ssllabs.com</a> prüfen lassen.</p>
+
+<h3 id="zertifikate-automatisch-erneuern-lassen">Zertifikate automatisch erneuern lassen</h3>
+
+<p>&ldquo;Volumes&rdquo;: {
+                &ldquo;/etc/letsencrypt&rdquo;: {},
+                &ldquo;/sys/fs/cgroup&rdquo;: {},
+                &ldquo;/var/lib/letsencrypt&rdquo;: {}</p>
+
+<h3 id="quellen">Quellen</h3>
+
+<ul>
+<li><a href="https://letsencrypt.org/">https://letsencrypt.org/</a></li>
+<li><a href="https://certbot.eff.org/docs">https://certbot.eff.org/docs</a></li>
+<li><a href="https://certbot.eff.org/#debianjessie-nginx">https://certbot.eff.org/#debianjessie-nginx</a></li>
+<li><a href="https://kofler.info/lets-encrypt-zertifikate-fuer-web-und-mail-unter-ubuntu-16-04/">https://kofler.info/lets-encrypt-zertifikate-fuer-web-und-mail-unter-ubuntu-16-04/</a></li>
+<li><a href="https://blog.doenselmann.com/nginx-und-lets-encrypt-auf-raspberry-pi/">https://blog.doenselmann.com/nginx-und-lets-encrypt-auf-raspberry-pi/</a></li>
+</ul>
 
 
 <footer class=" footline" >
@@ -613,108 +601,6 @@ Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend s
             
                 
                     
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -734,6 +620,9 @@ Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend s
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -785,10 +674,10 @@ Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend s
 
 
         
-            <a class="nav nav-prev" href="../../web/work.de/" title="Arbeit"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="../../web/" title="web"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="../../web/about.de/" title="Über" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="../../docker/" title="docker" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

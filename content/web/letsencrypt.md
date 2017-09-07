@@ -2,7 +2,7 @@
 title = "Let´s Encrypt"
 description = "Mit Let´s Encrypt ein Zertifikat erstellen"
 date = "2017-09-06T21:00:00+02:00"
-draft = true
+draft = false
 weight = 20
 +++
 

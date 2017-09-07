@@ -32,7 +32,7 @@ weight = 10
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-camera'></i> Showcases"
-url = "/showcase"
+url = "/showcase/"
 weight = 11
 
 [[menu.shortcuts]]
@@ -49,5 +49,5 @@ weight = 21
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-bullhorn'></i> Impressum"
-url = "/impressum"
+url = "/impressum/"
 weight = 30
