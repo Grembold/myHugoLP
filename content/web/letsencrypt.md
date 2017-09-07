@@ -30,8 +30,6 @@ Startet den certbot im "interaktiven" modus
     -v /home/pi/nginx-proxy/certs:/etc/letsencrypt --name certbot bcecchinato/certbot-rpi \
     certonly --webroot -w /var/www/ -d meineDomain.de -d www.meineDomain.de
 
-
-
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Plugins selected: Authenticator webroot, Installer None
 Enter email address (used for urgent renewal and security notices) (Enter 'c' to
