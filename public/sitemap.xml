@@ -3,16 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/ssh/</loc>
-  </url>
-  
-  <url>
     <loc>/ssh/configuration/</loc>
   </url>
   
   <url>
     <loc>/docker/rpi-hugo/</loc>
     <lastmod>2017-09-04T21:03:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/netzwerk/</loc>
+    <lastmod>2017-09-08T16:35:00+02:00</lastmod>
   </url>
   
   <url>
@@ -26,13 +27,23 @@
   </url>
   
   <url>
+    <loc>/docker/</loc>
+    <lastmod>2017-09-04T21:03:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/ssh/</loc>
+    <lastmod>2017-09-08T16:35:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/web/</loc>
     <lastmod>2017-04-24T18:36:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/docker/</loc>
-    <lastmod>2017-09-04T21:03:00+02:00</lastmod>
+    <loc>/netzwerk/struktur/</loc>
+    <lastmod>2017-09-08T13:22:00+00:00</lastmod>
   </url>
   
   <url>

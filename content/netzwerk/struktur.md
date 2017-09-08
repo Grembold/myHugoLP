@@ -1,12 +1,12 @@
 ---
 title: "Struktur"
 date: 2017-09-08T13:22:00Z
-draft: true
+draft: false
 ---
 
 ## Datenfluss
 
-![netzstruktur](images/netzstruktur.png)
+![netzstruktur](/images/netzstruktur.png)
 
 
 {{%attachments title="Related files" pattern=".*(pdf|pptx)"/%}}
