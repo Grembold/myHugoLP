@@ -4,10 +4,24 @@ description = "Mit Let´s Encrypt ein Zertifikat erstellen"
 date = "2017-09-06T21:00:00+02:00"
 draft = false
 weight = 20
+
+# Type of content, set "slide" to display it fullscreen with reveal.js
+type="page"
+
+# Creator's Display name
+creatordisplayname = "Olaf Blume"
+# Creator's Email
+creatoremail = "olaf-petersen@gmx.com"
+# LastModifier's Display name
+lastmodifierdisplayname = "Olaf Blume"
+# LastModifier's Email
+lastmodifieremail = "olaf-petersen@gmx.com"
 +++
 
+
+
 ### certbot installieren
-Wie das Docker image isntalleirt wird habe ich bereits [hier]{{< relref "docker/certbot.md" >}} beschrieben. Nun geht es darum ein Zertifikat für die eigene Daomein zu erhalten.
+Wie das Docker image installiert wird habe ich bereits [hier]{{< relref "docker/certbot.md" >}} beschrieben. Nun geht es darum ein Zertifikat für die eigene Domain zu erhalten.
 
 ### Let´s Encrypt Zertifikate für nginx installieren
 
@@ -15,81 +29,42 @@ Wie das Docker image isntalleirt wird habe ich bereits [hier]{{< relref "docker/
 
 Das Abrufen der Zertifikate läuft folgender massen ab:
 * Der eigene Webserver läuft und ist unter meineDomain:80 erreichbar.
-* Certbot erstell im www-Verzeichniss des Servers einen versteckten Ordner `.well-known` und einige Dateien
-* certbot prüft bei Let´s Encrypt, ob diese Dateien errecihbar sind.
-* ist dies erfogreich, wird das Zertifikat unter `/etc/letsencrypt/meineDomain`abgelegt.
+* Certbot erstell im www-Verzeichnis des Servers einen versteckten Ordner `.well-known` und einige Dateien
+* certbot prüft bei Let´s Encrypt, ob diese Dateien erreichbar sind.
+* ist dies erfolgreich, wird das Zertifikat unter `/etc/letsencrypt/meineDomain`abgelegt.
 
-Damit dies nun über das Docker Image funktioniert, müssen wir diesem zwei Verzeichnisse mitgeben. Das erste ist das www-Verzeichniss vom Webserver und das zweite ein verzeichniss, indem der certbot die erstellten Zertifikate ablegen kann.
+Damit dies nun über das Docker Image funktioniert, müssen wir diesem zwei Verzeichnisse mitgeben. Das erste ist das WWW-Verzeichnis vom Webserver und das zweite ein Verzeichnis, indem der certbot die erstellten Zertifikate ablegen kann.
 
+  docker run --rm -v $CERTS_DIR:/etc/letsencrypt -p 80:80 --name certbot napnap75/rpi-certbot:latest certbot certonly --standalone --standalone-supported-challenges http-01 -t -n --agree-tos -m $EMAIL -d $HOST
 
-    docker run --rm -v $CERTS_DIR:/etc/letsencrypt -p 80:80 --name certbot napnap75/rpi-certbot:latest certbot certonly --standalone --standalone-supported-challenges http-01 -t -n --agree-tos -m $EMAIL -d $HOST
-
-Startet den certbot im "interaktiven" modus
-    docker run -it --rm \ 
-    -v /home/pi/myHugoLP/public:/var/www/ \
-    -v /home/pi/nginx-proxy/certs:/etc/letsencrypt --name certbot bcecchinato/certbot-rpi \
-    certonly --webroot -w /var/www/ -d meineDomain.de -d www.meineDomain.de
-
-
-
-Saving debug log to /var/log/letsencrypt/letsencrypt.log
-Plugins selected: Authenticator webroot, Installer None
-Enter email address (used for urgent renewal and security notices) (Enter 'c' to
-cancel): 
-
--------------------------------------------------------------------------------
-Please read the Terms of Service at
-https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf. You must agree
-in order to register with the ACME server at
-https://acme-v01.api.letsencrypt.org/directory
--------------------------------------------------------------------------------
-(A)gree/(C)ancel: A
-
--------------------------------------------------------------------------------
-Would you be willing to share your email address with the Electronic Frontier
-Foundation, a founding partner of the Let's Encrypt project and the non-profit
-organization that develops Certbot? We'd like to send you email about EFF and
-our work to encrypt the web, protect its users and defend digital rights.
--------------------------------------------------------------------------------
-(Y)es/(N)o: N
-Obtaining a new certificate
-Performing the following challenges:
-http-01 challenge for meineDomain.de
-Using the webroot path /var/www for all unmatched domains.
-Waiting for verification...
-Cleaning up challenges
-
-IMPORTANT NOTES:
- - Congratulations! Your certificate and chain have been saved at:
-   /etc/letsencrypt/live/meineDomain.de/fullchain.pem
-   Your key file has been saved at:
-   /etc/letsencrypt/live/meineDomain.de/privkey.pem
-   Your cert will expire on 2017-12-01. To obtain a new or tweaked
-   version of this certificate in the future, simply run certbot
-   again. To non-interactively renew *all* of your certificates, run
-   "certbot renew"
- - Your account credentials have been saved in your Certbot
-   configuration directory at /etc/letsencrypt. You should make a
-   secure backup of this folder now. This configuration directory will
-   also contain certificates and private keys obtained by Certbot so
-   making regular backups of this folder is ideal.
- - If you like Certbot, please consider supporting our work by:
-
-   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
-   Donating to EFF:                    https://eff.org/donate-le
-
+Startet den certbot im "interaktiven" modus  
+  docker run -it --rm \
+  -v /home/pi/magic-broccoli/public:/var/www/ \
+  -v /home/pi/nginx-proxy/certs:/etc/letsencrypt --name certbot bcecchinato/certbot-rpi \
+  certonly --webroot -w /var/www/ -d blume.goip.de -d www.blume.goip.de -d doc.blume.goip.de
 
 ### Zertifikat und Konfiguration testen
 HTTPS-Konfiguration noch über die Seite https://www.ssllabs.com prüfen lassen.
 
 
-### Zertifikate automatisch erneuern lassen
+### Zertifikate automatisch erneuern lassen  
 
- "Volumes": {
+  "Volumes": {
                 "/etc/letsencrypt": {},
                 "/sys/fs/cgroup": {},
                 "/var/lib/letsencrypt": {}
 
+
+### Zertifikate sichern
+Nun hat man es endlich geschafft und hält die eigenen TLS-Zertifikate in der Hand ... naja im Ordner. Doch Wo legt man diese hin, damit sie nicht verloren gehen. Sicher man kann sich ja jetzt jeder Zeit wieder neue machen und spätestens nach 3 Monaten ist dies auch nötig, doch möchte man das ein kleines `certbot renew`reicht und man nicht alles von vorn machen muss.
+Der Certbot hat alles nötige in ein Verzeichnis gepackt, dies müssten wir nur noch zippen und fertig, ... doch ganz so leicht ist es dann doch nicht.
+Die Zertifikate und ordner sind nur für den root lesbar und sollten es auch bleiben. Mit einem einfachen Zip würden die Benutzerrechte verloren gehen. Daher muss das Verzeichnis zunächst mit tar als eine Datei zusammenfasst werden und kann handlich komprimiert werden. 
+
+  sudo tar cf - certs/ | 7z a -si blume.goip.de.cert.20170908.7z
+
+
+Das Entpacken eines solchen Archives läuft dann wieder in umgekehrter Reihenfolge ab (`Achtung`: Das Zielverzeichnis ZIELPFAD muss vorhanden sein!):
+  sudo 7za x -so ERGEBNIS.tar.7z | tar xf - -C ZIELPFAD --numeric-owner
 
 
 ### Quellen
