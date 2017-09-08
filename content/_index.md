@@ -5,11 +5,18 @@ date = "2017-04-24T18:36:24+02:00"
 
 +++
 
-## Olafs Dokumentation für PC und Bastelprojekte
+
+## Zurück zum Anfang
+Diese Seite werde ich in die Subdomain doc.blume.goip.de auslagern.
+Auf der ursprünglichen Seite blume.goip.de, sowie www.blume.goip.de wirde eine einfache Landingpage erstellt, die nur die Links zu diesem und weiteren Projekten enthält.  
+Gruß Olaf
+
+
+## Olafs Dokumentation für PC und Pastelprojekte
 
 Auf dieser Seite möchte ich Anleitungen für verschiedene Bastelprojekte von mir dokumentieren.
 
-Vileicht nutze ich einen Teil als block, um den zeitlichen Fortschritt zu dokumentieren und später daraus Tutorials oder Anleitungen zu erstellen.
+Vieleicht nutze ich einen Teil als block, um den zeitlichen Fortschritt zu dokumentieren und später daraus Tutorials oder Anleitungen zu erstellen.
 
 
 ### Dokumentations Webseite

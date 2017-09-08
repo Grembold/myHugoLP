@@ -1,8 +1,10 @@
 ﻿+++
 title = "SSH"
 description = ""
-weight = 1
-alwaysopen = true
+date = "2017-09-08T16:35:00+02:00"
+draft = false
+weight = 30
+#alwaysopen = true
 +++
 
 ## Secure Shell
