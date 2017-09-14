@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.26" />
-    <meta name="description" content="Raspberry Pi compatible Docker base image with Let´s Encrypt">
+    <meta name="description" content="FritzBox">
 
 
-    <title>certbot-rpi :: Meine Hugo Seite</title>
+    <title>FritzBox :: Meine Hugo Seite</title>
     <link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon" />
     <link href="../../css/nucleus.css" rel="stylesheet">
     <link href="../../css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/docker/certbot/">
+  <body class="" data-url="/netzwerk/fritzbox/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -80,7 +80,7 @@
   
     
     <li data-nav-id="/netzwerk/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -91,7 +91,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -116,7 +116,7 @@
   
     
       <li data-nav-id="/netzwerk/fritzbox/" class="dd-item
-     
+     active
       ">
         <a href="../../netzwerk/fritzbox/">
         <span>FritzBox</span> 
@@ -313,7 +313,7 @@
   
     
     <li data-nav-id="/docker/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -324,7 +324,7 @@
         
 
           
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
           
 
         
@@ -367,7 +367,7 @@
   
     
       <li data-nav-id="/docker/certbot/" class="dd-item
-     active
+     
       ">
         <a href="../../docker/certbot/">
         <span>certbot-rpi</span> 
@@ -512,7 +512,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/docker/certbot.md" target="blank">
+              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/netzwerk/fritzbox.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 
               </a>
@@ -536,7 +536,7 @@
 
 
 
- <a href='../../'>DocDock für Blume</a> > <a href='../../docker/'>docker</a> > certbot-rpi
+ <a href='../../'>DocDock für Blume</a> > <a href='../../netzwerk/'>IT-Struktur</a> > FritzBox
 
  
 
@@ -551,11 +551,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#was-ist-let-s-encrypt-https-letsencrypt-org">Was ist <a href="https://letsencrypt.org/">Let´s Encrypt</a>?</a>
-<ul>
-<li><a href="#pull-des-image">Pull des Image</a></li>
-<li><a href="#aktuelle-version-von-let-s-encrypt-certbot-abrufen">Aktuelle Version von Let´s Encrypt certbot abrufen</a></li>
-</ul></li>
+<li><a href="#einstellungen-zur-fritzbox">Einstellungen zur Fritzbox</a></li>
+<li><a href="#port-443-weiterleiten-klappt-nicht">Port 443 weiterleiten klappt nicht</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -567,7 +564,7 @@
         
         <div id="body-inner">
           
-            <h1>certbot-rpi</h1>
+            <h1>FritzBox</h1>
           
 
 
@@ -575,27 +572,9 @@
 
 
 
-<p>Um sein aktuelles SSL-Zertifikat für meine Webseite zu erhalten, ist es am einfachsten auf ein vorhandenes Docker Image zurückzugreifen.</p>
+<h2 id="einstellungen-zur-fritzbox">Einstellungen zur Fritzbox</h2>
 
-<h2 id="was-ist-let-s-encrypt-https-letsencrypt-org">Was ist <a href="https://letsencrypt.org/">Let´s Encrypt</a>?</h2>
-
-<p>Let´s Encrypt ist eine Zertifizierungsstelle die die erstellung von kostenlosen TLS-Zertifikaten anbietet. Ziel des Projektes ist es, jeden Internetdienst eine einfache Verschlüsselung anbieten kann.
-Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten certbot automatisiert.</p>
-
-<p><a href="https://hub.docker.com/r/bcecchinato/certbot-rpi/">certbot-rpi on DockerHub</a>
-<a href="https://github.com/bcecchinato/certbot-rpi">certbot-rpi on GitHub</a></p>
-
-<p>Hier eine kurze anleitung, wie das Docker Image verwendet wird.</p>
-
-<h3 id="pull-des-image">Pull des Image</h3>
-
-<pre><code>docker pull pull bcecchinato/certbot-rpi
-</code></pre>
-
-<h3 id="aktuelle-version-von-let-s-encrypt-certbot-abrufen">Aktuelle Version von Let´s Encrypt certbot abrufen</h3>
-
-<pre><code>docker run -it --rm bcecchinato/certbot-rpi --help
-</code></pre>
+<h2 id="port-443-weiterleiten-klappt-nicht">Port 443 weiterleiten klappt nicht</h2>
 
 
 <footer class=" footline" >
@@ -639,8 +618,6 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -656,6 +633,7 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
             
                 
+                    
                     
                 
                 
@@ -673,18 +651,8 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -693,9 +661,6 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -761,6 +726,70 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -788,62 +817,6 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -878,10 +851,10 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
 
 
         
-            <a class="nav nav-prev" href="../../docker/rpi-hugo/" title="rpi-hugo"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="../../netzwerk/" title="IT-Struktur"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="../../rpi/" title="Raspberry Pi" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="../../netzwerk/nginx/" title="NginX Revers-Proxy" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

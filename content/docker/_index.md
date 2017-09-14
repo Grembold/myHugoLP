@@ -1,6 +1,6 @@
 ﻿+++
 title = "docker"
-description = ""
+description = "Projekte rund um das Thema Docker"
 date = "2017-09-04T21:03:00+02:00"
 draft = false
 weight = 20

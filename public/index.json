@@ -1,10 +1,24 @@
 [
 {
-	"uri": "/ssh/configuration/",
+	"uri": "/rpi/configuration/",
 	"title": "Konfiguration",
 	"tags": [],
 	"description": "",
 	"content": " Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu müssen. Muss zunächst eine Verschlüsselung eingerichtet werden. Hierzu gibt es je Verbindung einen öffentlichen und einen privaten schlüssel. Der öffentliche Schlüssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Gerät verbleibt mit dem die Verbindung zu pi aufgebaut werden soll.\nZum generieren der Schlüssel gibt es verschiedene möglichkeiten\nSchlüssen mit \u0026ldquo;putty\u0026rdquo; erstelen. In der Programmsammlung von putty ist auch ein Key-Generator enthalte \u0026lsquo;puttygen.exe\u0026rsquo;. Mit diesem lässt sich ein öffentlicher (kommte auf den pi) und ein privater (verbleibt auf dem Gerät) erstellt werden.\nöffentlichen Schlüssel auf pi übertragen Zunächst müssen wir und auf dem pi mit dem Benutzer anmelder, unter dem später auch die Verbindung laufen soll. In unserem Fall melden wir auns also unter pi an. Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordner und eine Datei erstellen.\n$ mkdir ~/.ssh $ touch ~/.ssh/authorized_keys  Jetzt öffnen wir diesen datei nano ~/.ssh/authorized_keys und kopieren den Inhal des public key hinein. Dabei müssen wir darauf achten, dass alles in einer Zeile geschrieben steht.\nFür Olaf mit --text läst sich ein Befehl für copy-und paste freigeben.\n"
+},
+{
+	"uri": "/netzwerk/fritzbox/",
+	"title": "FritzBox",
+	"tags": [],
+	"description": "FritzBox",
+	"content": " Einstellungen zur Fritzbox Port 443 weiterleiten klappt nicht "
+},
+{
+	"uri": "/netzwerk/",
+	"title": "IT-Struktur",
+	"tags": [],
+	"description": "Übersicht des Datenfluss rund ums Web",
+	"content": " Datenfluss Unter IT-Struktur zeige ich, wie ich mein Netzwerk und den Datenfluss für die \u0026ldquo;öffentlich\u0026rdquo; erreichbaren teile aufgebaut habe.\nIch habe einen ganz normalen Internet-Anschluss mit einer Fritzbox und ein paar Servern (meist RaspberryPi) auf der anderen Seite.\nDa sich die öffentliche IP-Adresse der Fritzbox täglich ändert, habe ich mich bei einem dynDNS anbieter angemeldet und bis so über blume.goip.de immer erreichbar.\ndie Fritzbox so konfiguriert, dass die weiterleitung über einen Domainnamen erfolgt.\nKostenlose DynDNS Anbieter aus Deutschland  goip.de ddnss.de  Quellen  autrunk@wordpress antiun codingpedia   FritzBox  FritzBox\n NginX Revers-Proxy  NginX als Revers-Proxy einrichten\n WebServer  Einen Webserver mit NginX einrichten\n "
 },
 {
 	"uri": "/docker/rpi-hugo/",
@@ -14,14 +28,14 @@
 	"content": " Docker Image mit Hugo v2.6 für Raspberry pi Unter [DockerHub] finden sich jede Menge gut images für Docker. Darunter finden sich auch einige, die bereits für den Raspberry übersetzt wurden, denn standartmäßig ist alles nur für Linux 64bit systeme gedacht. Die Gruppe hypriot hat schon seit einigen Jahren sich mit dem Thema Docker ung Raspberry auseinander gesetzt. So findet sich unter dockerhub/hypriot einige tolle repos.\nDarunter war auch ein repo für hypriot/rpi-hugo . Doch leider musste ich schnell feststellen, dass es zu alt ist und seit zwei Jaren auf Version 0.14 stehengeblieben ist. Zum Glück ist alles open-Source und so fand sich im Github reousitory alle nötigen dateien um ein neues image mit version v2.6 zu erstellen. Damit auch andere user etwas davon haben, habe ich es unter grembold/rpi-hugo wieder in DockerHub abgelegt.\nHier die wichtigsten befehle für das rpi-hugo repo:\nhugo webseite initialisieren mkdir myblog \u0026amp;\u0026amp; cd myblog docker run -rm -v $(pwd):/www grembold/rpi-hugo new site .  Mit dem ersten Befehl wird ein Verzeichniss erstellt, dindem später alle Dateien für die Webseite gesammelt werden. Mit dem zweiten Befehl wird das docker image ausgeführt und hugo erstellt im aktuellen Verzeichniss alle nöätigen Dateien und Ordner. Der Befehl -rm löscht den container nach dem ausführen gleich wieder. Mit -v $(pwd):/www wird das aktuelle Arbeitsverzeichniss als Volume in den docker container eingehängt. Die kryptische Anweisung $(pwd) ist dabei eine Umgebungsvariable von linux. Mit echo $(pwd) kann man sich den Inhalt anzeigen lassen.\nhugo webseite generieren docker run -rm -v $(pwd):/www grembold/rpi-hugo  Dieser Befehl generiert nun aus den Inhalten unter myblog/content/ die HTML-Seiten und legt alle benötigten daten unter myblog/public ab.\nhugo webseite testen docker run -d -p 1313:1313 -v $(pwd):/www hypriot/rpi-hugo server -b http://\u0026lt;ip-of-your-rpi\u0026gt;/ --bind=0.0.0.0 -w -D  Hiermit lässt sich die Webseite vorher einmal testen. Dabei werden durch die Option -D auch Seiten generiert die noch als Entwurf draft=truegekennzeichnet sind generiert.\n"
 },
 {
-	"uri": "/netzwerk/",
-	"title": "Netzstruktur",
+	"uri": "/netzwerk/nginx/",
+	"title": "NginX Revers-Proxy",
 	"tags": [],
-	"description": "",
-	"content": "  Struktur  \n "
+	"description": "NginX als Revers-Proxy einrichten",
+	"content": " NginX als Revers proxy einrichten @Olaf: hier geht es weiter\nNginx als Reverse Proxy / Load Balancer\n Let´s Encrypt  Mit Let´s Encrypt ein Zertifikat erstellen\n Server Ports und Namen  Wie NginX entscheidet, welcher Server den Request bearbeiten soll.\n Server Unterodrner (locations)  Wie NginX entscheidet, welche location den Request bearbeiten soll.\n HTTP Proxy  HTTP-Anfragen an andere Server weiterleiten.\n GitLab hinter nginx-Revers-Proxy  HTTP-Anfragen an andere Server weiterleiten.\n logging für favicon.ico location = /favicon.ico { log_not_found off; access_log off; }   1 2 3  . "
 },
 {
-	"uri": "/web/letsencrypt/",
+	"uri": "/netzwerk/nginx/letsencrypt/",
 	"title": "Let´s Encrypt",
 	"tags": [],
 	"description": "Mit Let´s Encrypt ein Zertifikat erstellen",
@@ -38,36 +52,64 @@
 	"uri": "/docker/",
 	"title": "docker",
 	"tags": [],
-	"description": "",
+	"description": "Projekte rund um das Thema Docker",
 	"content": " Docker Also auf dem Raspberry Pi lässt sich zum Glück inzwischen auch docker und auch swarm ausführen.\nDabei ist zu beachten dass die images aus  DockerHub Auf dieser Seite möchte ich Anleitungen für verschiedene Bastelprojekte von mir dokumentieren.\n rpi-hugo  hugo docker image für raspberry pi\n certbot-rpi  Raspberry Pi compatible Docker base image with Let´s Encrypt\n "
 },
 {
-	"uri": "/ssh/",
-	"title": "SSH",
+	"uri": "/netzwerk/webserver/",
+	"title": "WebServer",
 	"tags": [],
-	"description": "",
+	"description": "Einen Webserver mit NginX einrichten",
+	"content": "Hugo Blog\nFhem\nSmartVisu\nWebCluster mit Docker Swarm\nMonitoren wie lange der eingene Server verfügbar war Beispiel trashserver.net UpTimeRobot\nWeb Server Survey\n(FreeFileSync)[https://www.freefilesync.org/] solte ich mir mal ansehen, um die Daten mit der NAS bazugleichen.\nSo, damit ich das nicht immer wieder vergesse. Im Repository dieser webseite sind die Themes als git submoldule eingebunden. Damit die aktuallisiert werden , muss folgenden ausgeführt werden\ngit submodule foreach git pull  Will man ein neues theme hinzufügen, som muss man mit $ git submodule add https://github.com/sethmacleod/docdock.git themes/docock in das eigene repository laden und anschließend in die initgit.sh integrieren $ git submodule init $ git submodule update\n"
+},
+{
+	"uri": "/netzwerk/nginx/servername/",
+	"title": "Server Ports und Namen",
+	"tags": [],
+	"description": "Wie NginX entscheidet, welcher Server den Request bearbeiten soll.",
+	"content": " Virtuelle Server mit Namen Also NginX (gesprochen engine X) horcht auf verschiedene Port und bearbeitet die etsprechenden anfragen. Hier für nginx in einer Konfigurationsdatei mitgeteilt auf welche Ports er horchen und wie reagieren soll. Hier ein einfachen Beispiel, bei dem 3 mal auf port*:80 gehorcht wird:\nserver { listen 80; server_name example.org www.example.org; ... } server { listen 80; server_name example.net www.example.net; ... } server { listen 80; server_name example.com www.example.com; ... }  Hier sind 3 Server konfiguriert, die alle auf port 80 hören (listen 80;. Danach ermittelt nginx anhand des Feld \u0026ldquo;Host\u0026rdquo; aus dem HTTP Anfrage-Header zu welchem Server (server_name) die Anfrage groutet werden soll. Wenn dieser Wert zu keinem server namen passt oder die anfrage keine header feld enthält, so leitet nginx die Anfrage an seinen standard server für diesen port. In dieser Konfiguration an den ersten - was das Standardverhalten von nginx ist. Man kann mit dem parameter default_server in der listen Anweisung auch explizit festlegen, welcher der standard server sein soll.\nserver { listen 80 default_server; server_name example.net www.example.net; ... }  Beachte, dass der default_server Parameter von listenund nicht von server_nameist.\n So verhindern Sie Verarbeitungsanforderungen mit undefinierten Servernamen Wenn der HTTP-Request ohne \u0026ldquo;Host\u0026rdquo; header feld nicht erlaubt sein soll, so kann ein server angelegt werden , der diese anfragen fallen lässt.\nserver { listen 80; server_name \u0026quot;\u0026quot;; return 444; }  Hier ist der Server-Name auf einen leeren String gesetzt worden, so dass er mit HTTP-Request ohne \u0026ldquo;Host\u0026rdquo; header Feld übereinstimmt und ein nginx spezischer return code 444 zurückgegeben und die verbindung geschlossen wird.\n"
+},
+{
+	"uri": "/rpi/",
+	"title": "Raspberry Pi",
+	"tags": [],
+	"description": "Projekte rund um die kleine Himbeere",
 	"content": " Secure Shell Mit Hilfe der Secure Shell (SSH) kann mann sich mit der Console des Raspberry Pi verbinden und Linux-Befehle auf dem pi ausführen.\n Konfiguration  Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu müssen. Muss zunächst eine Verschlüsselung eingerichtet werden. Hierzu gibt es je Verbindung einen öffentlichen und einen privaten schlüssel. Der öffentliche Schlüssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Gerät verbleibt mit dem die Verbindung zu pi aufgebaut werden soll. Zum generieren der Schlüssel gibt es verschiedene möglichkeiten Schlüssen mit \u0026ldquo;putty\u0026rdquo; erstelen. In der Programmsammlung von putty ist auch ein Key-Generator enthalte \u0026lsquo;puttygen.\n "
 },
 {
-	"uri": "/web/",
-	"title": "web",
+	"uri": "/netzwerk/nginx/location/",
+	"title": "Server Unterodrner (locations)",
 	"tags": [],
-	"description": "",
-	"content": "A bunch of Shortcodes are available with this theme :\nMonitoren wie lange der eingene Server verfügbar war Beispiel trashserver.net UpTimeRobot\nWeb Server Survey\n(FreeFileSync)[https://www.freefilesync.org/] solte ich mir mal ansehen, um die Daten mit der NAS bazugleichen.\nSo, damit ich das nicht immer wieder vergesse. Im Repository dieser webseite sind die Themes als git submoldule eingebunden. Damit die aktuallisiert werden , muss folgenden ausgeführt werden\ngit submodule foreach git pull  Will man ein neues theme hinzufügen, som muss man mit $ git submodule add https://github.com/sethmacleod/docdock.git themes/docock in das eigene repository laden und anschließend in die initgit.sh integrieren $ git submodule init $ git submodule update\n Let´s Encrypt  Mit Let´s Encrypt ein Zertifikat erstellen\n "
+	"description": "Wie NginX entscheidet, welche location den Request bearbeiten soll.",
+	"content": " Wie nginx etscheidet welches location/Subdiractorie den Request bearbeiten soll Schauen wir uns jetzt an, wie nginx einen Ord wählt, um eine Anfrage für eine typische, einfache PHP-Site zu verarbeiten:\nserver { listen 80; server_name example.org www.example.org; root /data/www; location / { index index.html index.php; } location ~* \\.(gif|jpg|png)$ { expires 30d; } location ~ \\.php$ { fastcgi_pass localhost:9000; fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; include fastcgi_params; } }  Nginx sucht zuerst nach dem spezifischsten Präfix-Standort, der von Literal-Strings unabhängig von der aufgeführten Reihenfolge gegeben wird. In der oben aufgeführten Konfiguration ist die einzige Präfix-Position \u0026quot;/\u0026quot; und da sie mit jeder Anfrage übereinstimmt, wird sie als letzter Ausweg verwendet. Anschließend überprüft nginx die Standorte, die durch den regulären Ausdruck in der Konfigurationsdatei anhand der aufgeführten Reihenfolge. Der erste passende Ausdruck stoppt die Suche und nginx wird diesen Ort verwenden. Wenn kein regulärer Ausdruck mit einer Anforderung übereinstimmt, verwendet nginx die aktuellste Präfix-Stelle, die früher gefunden wurde.\nBeachten, dass location aller Typen nur den URI-Teil der Anforderungszeile ohne die Argumente testen. Dies geschieht, weil Argumente in der Abfragezeichenfolge auf mehrere Arten gegeben werden können, zum Beispiel:\n/index.php?user=john\u0026amp;page=1 /index.php?page=1\u0026amp;user=john  Außerdem kann jeder alles mögliche im Abfrage-String anfordern:\n/index.php?page=1\u0026amp;something+else\u0026amp;user=john  Schauen wir mal an, wie die Anfragen in der obigen Konfiguration verarbeitet werden.\n Eine Anforderung \u0026quot;/logo.gif\u0026quot; wird durch den Präfixort \u0026quot;/\u0026quot; zuerst und dann durch den regulären Ausdruck \u0026quot;\\.(gif|jpg|png)$\u0026quot; abgeglichen, daher wird er von der letzteren Stelle abgewickelt. Mit der Anweisung \u0026quot;root /data/www\u0026quot; wird die Anforderung der Datei /data/www/logo.gif zugeordnet und die Datei wird an den Client gesendet. Eine Anforderung \u0026quot;/index.php\u0026quot; wird auch durch den Präfixort \u0026quot;/\u0026quot; und dann durch den regulären Ausdruck \u0026quot;\\.php$\u0026quot; abgeglichen. Deshalb wird es von diesem Standort abgewickelt und die Anforderung an einen FastCGI-Server übergeben, der auf localhost:9000 hört. Die Fastcgi_param-Direktive setzt den FastCGI-Parameter SCRIPT_FILENAME auf \u0026quot;/data/www/index.php\u0026quot; und der FastCGI-Server führt die Datei aus. Die Variable $document_root ist gleich dem Wert der Root-Direktive und die Variable $fastcgi_script_name ist gleich der Request-URI, d.h. \u0026quot;/ index.php\u0026quot;. Eine Anforderung \u0026quot;/about.html\u0026quot; wird nur durch den Präfixort \u0026quot;/\u0026quot; abgeglichen, daher wird er an dieser Stelle abgewickelt. Mit der Anweisung \u0026quot;root /data/www\u0026quot; wird die Anforderung der Datei /data/www/about.html zugeordnet und die Datei wird an den Client gesendet. Die Handhabung einer Anfrage \u0026quot;/\u0026quot; ist komplexer. Es wird nur durch die Präfix-Position \u0026quot;/\u0026quot; abgeglichen, daher wird es von diesem Ort gehandhabt. Dann prüft die index-Direktive auf die Existenz von Indexdateien nach ihren Parametern und der \u0026quot;root /data/www\u0026quot;-Richtlinie. Wenn die Datei /data/www/index.html nicht existiert und die Datei /data/www/index.php existiert, führt die Richtlinie eine interne Weiterleitung zu \u0026quot;/index.php\u0026quot; durch und nginx durchsucht die Standorte erneut als wenn die Anfrage von einem Kunden gesendet wurde. Wie wir vorher gesehen haben, wird die umgeleitete Anfrage schließlich vom FastCGI-Server abgewickelt.  nginx forum https://forum.nginx.org/read.php?18,266984\n"
 },
 {
-	"uri": "/netzwerk/struktur/",
-	"title": "Struktur",
+	"uri": "/netzwerk/nginx/proxy/",
+	"title": "HTTP Proxy",
 	"tags": [],
-	"description": "",
-	"content": " Datenfluss   Related files   NetzStruktur_ReversProxy.pptx  (66 ko)   Quellen  autrunk@wordpress antiun codingpedia  "
+	"description": "HTTP-Anfragen an andere Server weiterleiten.",
+	"content": " Das nginx-Modul ngx_http_proxy_module erlaubt es anfragen an andere Server weiterzuleiten.\nBeispielkonfiguration location / { proxy_pass http://localhost:8000; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; }\n## proxy_pass proxy_pass legt das Protokoll und die Adresse eines Proxy-Servers und einer optionalen URI fest, an den ein Standort abgebildet/gemapped werden soll. Als Protokoll können \u0026ldquo;http\u0026rdquo; oder \u0026ldquo;https\u0026rdquo; angegeben werden. Die Adresse kann als Domain Name oder IP-Adresse angegeben werden und ein optionaler Port:\nproxy_pass http://localhost:8000/uri/;  oder als UNIX-Domain-Socket-Pfad, der nach dem Wort \u0026ldquo;Unix\u0026rdquo; angegeben und in Doppelpunkte eingeschlossen ist:\nproxy_pass http://unix:/tmp/backend.socket:/uri/;  Wenn ein Domain-Name auf mehrere Adressen auflöst, werden alle in einer Round-Robin-Methode verwendet. Zusätzlich kann eine Adresse als Servergruppe angegeben werden.\nParameterwert kann Variablen enthalten. In diesem Fall wird, wenn eine Adresse als Domänenname angegeben wird, der Name unter den beschriebenen Servergruppen durchsucht und, falls nicht gefunden, mit einem Resolver ermittelt.\nEin Anforderungs-URI wird wie folgt an den Server übergeben:\n Wenn die Proxy_pass-Direktive mit einem URI angegeben wird, wird dann, wenn eine Anforderung an den Server übergeben wird, der Teil eines normalisierten Anforderungs-URI, der mit dem Standort übereinstimmt, durch einen URI ersetzt, der in der Anweisung angegeben ist:\nlocation /name/ { proxy_pass http://127.0.0.1/remote/; }\n Wenn proxy_pass ohne einen URI angegeben wird, wird der Anforderungs-URI an den Server in der gleichen Form übermittelt, wie er von einem Client gesendet wird, wenn die ursprüngliche Anforderung verarbeitet wird, oder die vollständige normalisierte Anforderungs-URI wird bei der Verarbeitung des geänderten URI übergeben:\nlocation /some/path/ { proxy_pass http://127.0.0.1; }\n  proxy_set_header Ermöglicht das Neudefinieren oder Anfügen von Feldern an den an den Proxy-Server übergebenen Anforderungs-Header. Der Wert kann Text, Variablen und deren Kombinationen enthalten. Diese Richtlinien werden von der vorherigen Ebene geerbt, wenn und nur wenn keine proxy_set_header-Direktiven auf der aktuellen Ebene definiert sind. Standardmäßig sind nur zwei Felder neu definiert:\nproxy_set_header Host $proxy_host; proxy_set_header Connection close;  Wenn das Caching aktiviert ist, werden die Header-Felder \u0026ldquo;If-Modified-Since\u0026rdquo;, \u0026ldquo;If-Unmodified-Since\u0026rdquo;, \u0026ldquo;If-None-Match\u0026rdquo;, \u0026ldquo;If-Match\u0026rdquo;, \u0026ldquo;Range\u0026rdquo; und \u0026ldquo;If-Range\u0026rdquo; von der ursprüngliche Anforderung nicht an den Proxy-Server weitergegeben.\nEin unverändertes \u0026ldquo;Host\u0026rdquo; -Anforderungs-Header-Feld kann wie folgt übergeben werden:\nproxy_set_header Host $http_host;  Wenn dieses Feld jedoch nicht in einem Client-Request-Header vorhanden ist, wird nichts übergeben. In einem solchen Fall ist es besser, die Variable $ host zu verwenden - ihr Wert entspricht dem Servernamen im Feld \u0026ldquo;Host\u0026rdquo; -Anforderungsheader oder dem primären Servernamen, falls dieses Feld nicht vorhanden ist:\nproxy_set_header Host $host;  Zusätzlich kann der Servername zusammen mit dem Port des Proxy-Servers übergeben werden:\nproxy_set_header Host $host:$proxy_port;  Wenn der Wert eines Header-Feldes eine leere Zeichenfolge ist, wird dieses Feld nicht an einen Proxy-Server weitergegeben:\nproxy_set_header Accept-Encoding \u0026quot;\u0026quot;;  proxy_redirect Setzt den Text, der in den Headerfeldern \u0026ldquo;Location\u0026rdquo; und \u0026ldquo;Refresh\u0026rdquo; geändert werden soll. Angenommen, ein Proxy-Server hat das Header-Feld \u0026quot;Location: http://localhost:8000/two/some/uri/\u0026quot; zurückgegeben. Die Direktive\nproxy_redirect http://localhost:8000/two/ http://frontend/one/;  wird diese Zeichenfolge auf \u0026quot;Location: http://frontend/one/some/uri/\u0026quot; umschreiben.\nEin Servername kann in der Ersatzzeichenfolge weggelassen werden:\nproxy_redirect http://localhost:8000/two/ /;  dann wird der Name des primären Servers und der Port, falls abweichend von 80, eingefügt.\nDie Standardersetzung, die durch den default angegeben wird, verwendet die Parameter der location- und proxy_pass-Direktiven. Daher sind die beiden folgenden Konfigurationen äquivalent:\nlocation /one/ { proxy_pass http://upstream:port/two/; proxy_redirect default; location /one/ { proxy_pass http://upstream:port/two/; proxy_redirect http://upstream:port/two/ /one/;  Der Standardparameter ist nicht zulässig, wenn proxy_pass mit Variablen angegeben wird.\nEin Ersatzstring kann Variablen enthalten:\nproxy_redirect http://localhost:8000/ http://$host:$server_port/;  Eine Umleitung kann auch (1.1.11) Variablen enthalten:\nproxy_redirect http: // $ proxy_host: 8000 / /; Die Richtlinie kann mit regulären Ausdrücken (1.1.11) angegeben werden. In diesem Fall sollte die Umleitung entweder mit dem \u0026ldquo;~\u0026rdquo; - Symbol für eine Groß- / Kleinschreibung oder mit den \u0026ldquo;~ *\u0026rdquo; - Symbolen für die Groß- / Kleinschreibung beginnen. Der reguläre Ausdruck kann benannte und positionale Erfassungen enthalten, und der Ersatz kann sie verweisen:\nproxy_redirect ~^(http://[^:]+):\\d+(/.+)$ $1$2; proxy_redirect ~*/user/([^/]+)/(.+)$ http://$1.example.com/$2;  Es könnte mehrere proxy_redirect Richtlinien geben:\nproxy_redirect default; proxy_redirect http://localhost:8000/ /; proxy_redirect http://www.example.com/ /;  Der Aus-Parameter hebt den Effekt aller proxy_redirect-Direktiven auf der aktuellen Ebene auf:\nproxy_redirect aus; proxy_redirect default; proxy_redirect http://localhost:8000/ /; proxy_redirect http://www.example.com/ /;  Mit dieser Anweisung ist es auch möglich, Hostnamen zu relativen Weiterleitungen hinzuzufügen, die von einem Proxy-Server ausgegeben werden:\nproxy_redirect / /;  "
+},
+{
+	"uri": "/netzwerk/nginx/gitlab_domain_subfolder/",
+	"title": "GitLab hinter nginx-Revers-Proxy",
+	"tags": [],
+	"description": "HTTP-Anfragen an andere Server weiterleiten.",
+	"content": " Um GitLab unter einer relativen URL verwenden zu können  Install GitLab under a relative URL  Diese Anleitung beschreibt wie GitLab unter einer relativen URL verwendet werden kann, nur bei \u0026ldquo;installation from sourve\u0026rdquo;. Wenn alternativ zur installation ein Omnibus package verwendet wurde, sind die schritte unterschiedlich.\nNutze diese Anleitung zusammen mit dem installation guid, wenn du GitLAb das erste mal installiert.\n  GitLab Docker mit relativen URL Dieses Docker Image wird auch von der QNAP Containerstation verwendet.  "
+},
+{
+	"uri": "/impressum/",
+	"title": "Impressum",
+	"tags": [],
+	"description": "Verantwortlich für dieses Angebot gemäß § 5 TMG / § 55 RStV",
+	"content": " Impressum Verantwortlich für dieses Angebot gemäß § 5 TMG / § 55 RStV: Olaf Blume Franz-Schubert-Str. 2\n21365 Adendorf\nemail: olaf-petersen @ gmx.de\nHaftung für Links Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.\nEine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.\n"
 },
 {
 	"uri": "/",
 	"title": "DocDock für Blume",
 	"tags": [],
-	"description": "",
-	"content": " Zurück zum Anfang Diese Seite werde ich in die Subdomain doc.blume.goip.de auslagern. Auf der ursprünglichen Seite blume.goip.de, sowie www.blume.goip.de wirde eine einfache Landingpage erstellt, die nur die Links zu diesem und weiteren Projekten enthält.\nGruß Olaf\nOlafs Dokumentation für PC und Pastelprojekte Auf dieser Seite möchte ich Anleitungen für verschiedene Bastelprojekte von mir dokumentieren.\nVieleicht nutze ich einen Teil als block, um den zeitlichen Fortschritt zu dokumentieren und später daraus Tutorials oder Anleitungen zu erstellen.\nDokumentations Webseite Diese Dokumentation ist eine mit hugo statisch generierte Webseite: mit dem Einfachen Befehl hugo\nAutomated deployments Automatically published and hosted thanks to Netlify.\nRead more about Automated HUGO deployments with Netlify\n Netlify builds, deploys, and hosts frontends.  "
+	"description": "DocDock für Blume",
+	"content": " Olafs Dokumentation für PC und Pastelprojekte Auf dieser Seite möchte ich Anleitungen für verschiedene Bastelprojekte von mir dokumentieren. Ziel der Bastelprojekte ist es, mich im Bereich der Informationsverarbeitung, Netzsicherheit und Linux weiterzubilden (bloß nicht den Anschluss verlieren) und dabei auch etwas Spaß am Probieren und tüfteln zu haben. Vieleicht nutze ich aber auch einen Teil als blog, um den zeitlichen Fortschritt zu dokumentieren und später daraus Tutorials oder Anleitungen zu erstellen. mal sehen\u0026hellip;\nDokumentations Webseite Diese Dokumentation ist eine mit hugo statisch generierte Webseite. Verwendet habe ich hierfür hugo. Dies wird auf einem Blog die ich rund um das Thema Docker auf Raspberry Pi viel gelesen habe verwendet und es schien mir recht einfach zu sein. Weitere dieser \u0026ldquo;static site generators\u0026rdquo; und warum sie für einfache Webseiten oder blogs super geeignet sind findet ihr unter staticgen.com.\n"
 },
 {
 	"uri": "/_header/",
@@ -82,13 +124,6 @@
 	"tags": [],
 	"description": "",
 	"content": ""
-},
-{
-	"uri": "/impressum/",
-	"title": "Impressum",
-	"tags": [],
-	"description": "Verantwortlich für dieses Angebot gemäß § 5 TMG / § 55 RStV",
-	"content": " Impressum Verantwortlich für dieses Angebot gemäß § 5 TMG / § 55 RStV: Olaf Blume Franz-Schubert-Str. 2\n21365 Adendorf\nemail: olaf-petersen@qmx.de\nHaftung für Links Unser Angebot enth\u0026auml;lt Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb k\u0026ouml;nnen wir f\u0026uuml;r diese fremden Inhalte auch keine Gew\u0026auml;hr \u0026uuml;bernehmen. F\u0026uuml;r die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf m\u0026ouml;gliche Rechtsverst\u0026ouml;\u0026szlig;e \u0026uuml;berpr\u0026uuml;ft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.\nEine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.\n"
 },
 {
 	"uri": "/tags/",

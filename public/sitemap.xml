@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/ssh/configuration/</loc>
+    <loc>/rpi/configuration/</loc>
   </url>
   
   <url>
-    <loc>/docker/rpi-hugo/</loc>
-    <lastmod>2017-09-04T21:03:00+02:00</lastmod>
+    <loc>/netzwerk/fritzbox/</loc>
+    <lastmod>2017-09-14T18:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -17,7 +17,17 @@
   </url>
   
   <url>
-    <loc>/web/letsencrypt/</loc>
+    <loc>/docker/rpi-hugo/</loc>
+    <lastmod>2017-09-04T21:03:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/netzwerk/nginx/</loc>
+    <lastmod>2017-09-11T16:35:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/netzwerk/nginx/letsencrypt/</loc>
     <lastmod>2017-09-06T21:00:00+02:00</lastmod>
   </url>
   
@@ -32,18 +42,38 @@
   </url>
   
   <url>
-    <loc>/ssh/</loc>
+    <loc>/netzwerk/webserver/</loc>
+    <lastmod>2017-09-14T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/netzwerk/nginx/servername/</loc>
+    <lastmod>2017-09-12T16:35:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/rpi/</loc>
     <lastmod>2017-09-08T16:35:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/web/</loc>
-    <lastmod>2017-04-24T18:36:24+02:00</lastmod>
+    <loc>/netzwerk/nginx/location/</loc>
+    <lastmod>2017-09-12T16:35:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/netzwerk/struktur/</loc>
-    <lastmod>2017-09-08T13:22:00+00:00</lastmod>
+    <loc>/netzwerk/nginx/proxy/</loc>
+    <lastmod>2017-09-12T16:35:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/netzwerk/nginx/gitlab_domain_subfolder/</loc>
+    <lastmod>2017-09-12T16:35:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/impressum/</loc>
+    <lastmod>2017-09-01T18:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -59,10 +89,6 @@
   <url>
     <loc>/categories/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/impressum/</loc>
   </url>
   
   <url>

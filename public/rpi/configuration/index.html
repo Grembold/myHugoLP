@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.26" />
-    <meta name="description" content="Raspberry Pi compatible Docker base image with Let´s Encrypt">
+    <meta name="description" content="">
 
 
-    <title>certbot-rpi :: Meine Hugo Seite</title>
+    <title>Konfiguration :: Meine Hugo Seite</title>
     <link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon" />
     <link href="../../css/nucleus.css" rel="stylesheet">
     <link href="../../css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/docker/certbot/">
+  <body class="" data-url="/rpi/configuration/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -313,7 +313,7 @@
   
     
     <li data-nav-id="/docker/" class="dd-item 
-        parent
+        
         
         
         ">
@@ -324,7 +324,7 @@
         
 
           
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
           
 
         
@@ -367,7 +367,7 @@
   
     
       <li data-nav-id="/docker/certbot/" class="dd-item
-     active
+     
       ">
         <a href="../../docker/certbot/">
         <span>certbot-rpi</span> 
@@ -394,7 +394,7 @@
   
     
     <li data-nav-id="/rpi/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -405,7 +405,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -428,7 +428,7 @@
   
     
       <li data-nav-id="/rpi/configuration/" class="dd-item
-     
+     active
       ">
         <a href="../../rpi/configuration/">
         <span>Konfiguration</span> 
@@ -512,7 +512,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/docker/certbot.md" target="blank">
+              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/rpi/configuration.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 
               </a>
@@ -536,7 +536,7 @@
 
 
 
- <a href='../../'>DocDock für Blume</a> > <a href='../../docker/'>docker</a> > certbot-rpi
+ <a href='../../'>DocDock für Blume</a> > <a href='../../rpi/'>Raspberry Pi</a> > Konfiguration
 
  
 
@@ -551,10 +551,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#was-ist-let-s-encrypt-https-letsencrypt-org">Was ist <a href="https://letsencrypt.org/">Let´s Encrypt</a>?</a>
+<li>
 <ul>
-<li><a href="#pull-des-image">Pull des Image</a></li>
-<li><a href="#aktuelle-version-von-let-s-encrypt-certbot-abrufen">Aktuelle Version von Let´s Encrypt certbot abrufen</a></li>
+<li><a href="#schlüssen-mit-putty-erstelen">Schlüssen mit &ldquo;putty&rdquo; erstelen.</a></li>
+<li><a href="#öffentlichen-schlüssel-auf-pi-übertragen">öffentlichen Schlüssel auf pi übertragen</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -567,7 +567,7 @@
         
         <div id="body-inner">
           
-            <h1>certbot-rpi</h1>
+            <h1>Konfiguration</h1>
           
 
 
@@ -575,27 +575,30 @@
 
 
 
-<p>Um sein aktuelles SSL-Zertifikat für meine Webseite zu erhalten, ist es am einfachsten auf ein vorhandenes Docker Image zurückzugreifen.</p>
+<p>Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu müssen. Muss zunächst eine Verschlüsselung eingerichtet werden.
+Hierzu gibt es je Verbindung einen öffentlichen und einen privaten schlüssel.
+Der öffentliche Schlüssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Gerät verbleibt mit dem die Verbindung zu pi aufgebaut werden soll.</p>
 
-<h2 id="was-ist-let-s-encrypt-https-letsencrypt-org">Was ist <a href="https://letsencrypt.org/">Let´s Encrypt</a>?</h2>
+<p>Zum generieren der Schlüssel gibt es verschiedene möglichkeiten</p>
 
-<p>Let´s Encrypt ist eine Zertifizierungsstelle die die erstellung von kostenlosen TLS-Zertifikaten anbietet. Ziel des Projektes ist es, jeden Internetdienst eine einfache Verschlüsselung anbieten kann.
-Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten certbot automatisiert.</p>
+<h3 id="schlüssen-mit-putty-erstelen">Schlüssen mit &ldquo;putty&rdquo; erstelen.</h3>
 
-<p><a href="https://hub.docker.com/r/bcecchinato/certbot-rpi/">certbot-rpi on DockerHub</a>
-<a href="https://github.com/bcecchinato/certbot-rpi">certbot-rpi on GitHub</a></p>
+<p>In der Programmsammlung von <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.70.html">putty</a> ist auch ein Key-Generator enthalte &lsquo;puttygen.exe&rsquo;.
+Mit diesem lässt sich ein öffentlicher (kommte auf den pi) und ein privater (verbleibt auf dem Gerät) erstellt werden.</p>
 
-<p>Hier eine kurze anleitung, wie das Docker Image verwendet wird.</p>
+<h3 id="öffentlichen-schlüssel-auf-pi-übertragen">öffentlichen Schlüssel auf pi übertragen</h3>
 
-<h3 id="pull-des-image">Pull des Image</h3>
+<p>Zunächst müssen wir und auf dem pi mit dem Benutzer anmelder, unter dem später auch die Verbindung laufen soll.
+In unserem Fall melden wir auns also unter pi an.
+Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordner und eine Datei erstellen.</p>
 
-<pre><code>docker pull pull bcecchinato/certbot-rpi
+<pre><code>$ mkdir ~/.ssh
+$ touch ~/.ssh/authorized_keys
 </code></pre>
 
-<h3 id="aktuelle-version-von-let-s-encrypt-certbot-abrufen">Aktuelle Version von Let´s Encrypt certbot abrufen</h3>
+<p>Jetzt öffnen wir diesen datei <code>nano ~/.ssh/authorized_keys</code> und kopieren den Inhal des public key hinein. Dabei müssen wir darauf achten, dass alles in einer Zeile geschrieben steht.</p>
 
-<pre><code>docker run -it --rm bcecchinato/certbot-rpi --help
-</code></pre>
+<p>Für Olaf  mit <code>--text</code> läst sich ein Befehl für copy-und paste freigeben.</p>
 
 
 <footer class=" footline" >
@@ -788,62 +791,6 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -868,6 +815,56 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -878,10 +875,10 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
 
 
         
-            <a class="nav nav-prev" href="../../docker/rpi-hugo/" title="rpi-hugo"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="../../rpi/" title="Raspberry Pi"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="../../rpi/" title="Raspberry Pi" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="../../netzwerk/" title="IT-Struktur" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

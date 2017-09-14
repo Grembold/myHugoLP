@@ -1,6 +1,6 @@
 ﻿+++
-title = "SSH"
-description = ""
+title = "Raspberry Pi"
+description = "Projekte rund um die kleine Himbeere"
 date = "2017-09-08T16:35:00+02:00"
 draft = false
 weight = 30

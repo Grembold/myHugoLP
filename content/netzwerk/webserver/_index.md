@@ -1,11 +1,18 @@
-﻿+++
-title = "web"
-description = ""
-date = "2017-04-24T18:36:24+02:00"
-weight = 30
-+++
+---
+title:          "WebServer"
+description:    "Einen Webserver mit NginX einrichten"
+date:           2017-09-14T18:00:00Z
+draft:          true
+weight:         30
+---
 
-A bunch of Shortcodes are available with this theme :
+Hugo Blog
+
+Fhem
+
+SmartVisu
+
+WebCluster mit Docker Swarm
 
 Monitoren wie lange der eingene Server verfügbar war
 Beispiel [trashserver.net](https://status.trashserver.net/)
@@ -30,6 +37,3 @@ Will man ein neues theme hinzufügen, som muss man mit
 in das eigene repository laden und anschließend in die initgit.sh integrieren
     $ git submodule init
     $ git submodule update
-
-    
-{{%children style="h2" description="true" %}}

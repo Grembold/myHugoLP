@@ -4,22 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="generator" content="Hugo 0.26" />
-    <meta name="description" content="Raspberry Pi compatible Docker base image with Let´s Encrypt">
+    <meta name="description" content="HTTP-Anfragen an andere Server weiterleiten.">
 
 
-    <title>certbot-rpi :: Meine Hugo Seite</title>
-    <link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon" />
-    <link href="../../css/nucleus.css" rel="stylesheet">
-    <link href="../../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../../css/hybrid.css" rel="stylesheet">
-    <link href="../../css/featherlight.min.css" rel="stylesheet">
-    <link href="../../css/horsey.css" rel="stylesheet">
+    <title>HTTP Proxy :: Meine Hugo Seite</title>
+    <link rel="shortcut icon" href="../../../images/favicon.png" type="image/x-icon" />
+    <link href="../../../css/nucleus.css" rel="stylesheet">
+    <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../../css/hybrid.css" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css" rel="stylesheet">
+    <link href="../../../css/horsey.css" rel="stylesheet">
     
-    <link href="../../css/theme.css" rel="stylesheet">
+    <link href="../../../css/theme.css" rel="stylesheet">
     
     
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <script src="../../js/jquery-2.x.min.js"></script>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <script src="../../../js/jquery-2.x.min.js"></script>
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left {
         display:none !important;
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/docker/certbot/">
+  <body class="" data-url="/netzwerk/nginx/proxy/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -53,12 +53,12 @@
     <input data-search-input id="search-by" type="text" placeholder="">
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
-<script type="text/javascript" src="../../js/lunr.min.js"></script>
-<script type="text/javascript" src="../../js/horsey.js"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js"></script>
+<script type="text/javascript" src="../../../js/horsey.js"></script>
 <script type="text/javascript">
     var baseurl = "\/";
 </script>
-<script type="text/javascript" src="../../js/search.js"></script>
+<script type="text/javascript" src="../../../js/search.js"></script>
 
     
   </div>
@@ -67,7 +67,7 @@
     <ul class="topics">
         
             <li data-nav-id="/" class="dd-item">
-            <a href="../../"><i class="fa fa-fw fa-home"></i></a>
+            <a href="../../../"><i class="fa fa-fw fa-home"></i></a>
             </li>
         
         
@@ -80,18 +80,18 @@
   
     
     <li data-nav-id="/netzwerk/" class="dd-item 
-        
+        parent
         
         
         ">
-      <a href="../../netzwerk/">
+      <a href="../../../netzwerk/">
         <span>IT-Struktur</span>
 
         
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -118,7 +118,7 @@
       <li data-nav-id="/netzwerk/fritzbox/" class="dd-item
      
       ">
-        <a href="../../netzwerk/fritzbox/">
+        <a href="../../../netzwerk/fritzbox/">
         <span>FritzBox</span> 
         <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
         </a></li>
@@ -136,18 +136,18 @@
   
     
     <li data-nav-id="/netzwerk/nginx/" class="dd-item 
-        
+        parent
         
         
         ">
-      <a href="../../netzwerk/nginx/">
+      <a href="../../../netzwerk/nginx/">
         <span>NginX Revers-Proxy</span>
 
         
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -172,7 +172,7 @@
       <li data-nav-id="/netzwerk/nginx/letsencrypt/" class="dd-item
      
       ">
-        <a href="../../netzwerk/nginx/letsencrypt/">
+        <a href="../../../netzwerk/nginx/letsencrypt/">
         <span>Let´s Encrypt</span> 
         <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
         </a></li>
@@ -192,7 +192,7 @@
       <li data-nav-id="/netzwerk/nginx/servername/" class="dd-item
      
       ">
-        <a href="../../netzwerk/nginx/servername/">
+        <a href="../../../netzwerk/nginx/servername/">
         <span>Server Ports und Namen</span> 
         <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
         </a></li>
@@ -212,7 +212,7 @@
       <li data-nav-id="/netzwerk/nginx/location/" class="dd-item
      
       ">
-        <a href="../../netzwerk/nginx/location/">
+        <a href="../../../netzwerk/nginx/location/">
         <span>Server Unterodrner (locations)</span> 
         <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
         </a></li>
@@ -230,9 +230,9 @@
   
     
       <li data-nav-id="/netzwerk/nginx/proxy/" class="dd-item
-     
+     active
       ">
-        <a href="../../netzwerk/nginx/proxy/">
+        <a href="../../../netzwerk/nginx/proxy/">
         <span>HTTP Proxy</span> 
         <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
         </a></li>
@@ -252,7 +252,7 @@
       <li data-nav-id="/netzwerk/nginx/gitlab_domain_subfolder/" class="dd-item
      
       ">
-        <a href="../../netzwerk/nginx/gitlab_domain_subfolder/">
+        <a href="../../../netzwerk/nginx/gitlab_domain_subfolder/">
         <span>GitLab hinter nginx-Revers-Proxy</span> 
         <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
         </a></li>
@@ -283,7 +283,7 @@
         
         
         ">
-      <a href="../../netzwerk/webserver/">
+      <a href="../../../netzwerk/webserver/">
         <span>WebServer</span>
 
         
@@ -313,18 +313,18 @@
   
     
     <li data-nav-id="/docker/" class="dd-item 
-        parent
+        
         
         
         ">
-      <a href="../../docker/">
+      <a href="../../../docker/">
         <span>docker</span>
 
         
         
 
           
-            <i class="fa fa-angle-down fa-lg category-icon"></i>
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
           
 
         
@@ -349,7 +349,7 @@
       <li data-nav-id="/docker/rpi-hugo/" class="dd-item
      
       ">
-        <a href="../../docker/rpi-hugo/">
+        <a href="../../../docker/rpi-hugo/">
         <span>rpi-hugo</span> 
         <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
         </a></li>
@@ -367,9 +367,9 @@
   
     
       <li data-nav-id="/docker/certbot/" class="dd-item
-     active
+     
       ">
-        <a href="../../docker/certbot/">
+        <a href="../../../docker/certbot/">
         <span>certbot-rpi</span> 
         <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
         </a></li>
@@ -398,7 +398,7 @@
         
         
         ">
-      <a href="../../rpi/">
+      <a href="../../../rpi/">
         <span>Raspberry Pi</span>
 
         
@@ -430,7 +430,7 @@
       <li data-nav-id="/rpi/configuration/" class="dd-item
      
       ">
-        <a href="../../rpi/configuration/">
+        <a href="../../../rpi/configuration/">
         <span>Konfiguration</span> 
         <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
         </a></li>
@@ -461,7 +461,7 @@
             
                 <li class="" role="">
                     
-                    <a href="../../showcase/"><i class='fa fa-camera'></i> Showcases</a>
+                    <a href="../../../showcase/"><i class='fa fa-camera'></i> Showcases</a>
                     
                 </li>
             
@@ -479,7 +479,7 @@
             
                 <li class="" role="">
                     
-                    <a href="../../impressum/"><i class='fa fa-bullhorn'></i> Impressum</a>
+                    <a href="../../../impressum/"><i class='fa fa-bullhorn'></i> Impressum</a>
                     
                 </li>
             
@@ -512,7 +512,7 @@
               
               
             <div id="top-github-link">
-              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/docker/certbot.md" target="blank">
+              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/netzwerk/nginx/proxy.md" target="blank">
                 <i class="fa fa-code-fork"></i>
                 
               </a>
@@ -536,7 +536,12 @@
 
 
 
- <a href='../../'>DocDock für Blume</a> > <a href='../../docker/'>docker</a> > certbot-rpi
+
+
+
+ <a href='../../../'>DocDock für Blume</a> > <a href='../../../netzwerk/'>IT-Struktur</a> > <a href='../../../netzwerk/nginx/'>NginX Revers-Proxy</a> > HTTP Proxy
+
+ 
 
  
 
@@ -551,11 +556,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#was-ist-let-s-encrypt-https-letsencrypt-org">Was ist <a href="https://letsencrypt.org/">Let´s Encrypt</a>?</a>
-<ul>
-<li><a href="#pull-des-image">Pull des Image</a></li>
-<li><a href="#aktuelle-version-von-let-s-encrypt-certbot-abrufen">Aktuelle Version von Let´s Encrypt certbot abrufen</a></li>
-</ul></li>
+<li><a href="#beispielkonfiguration">Beispielkonfiguration</a></li>
+<li><a href="#proxy-set-header">proxy_set_header</a></li>
+<li><a href="#proxy-redirect">proxy_redirect</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -567,7 +570,7 @@
         
         <div id="body-inner">
           
-            <h1>certbot-rpi</h1>
+            <h1>HTTP Proxy</h1>
           
 
 
@@ -575,26 +578,143 @@
 
 
 
-<p>Um sein aktuelles SSL-Zertifikat für meine Webseite zu erhalten, ist es am einfachsten auf ein vorhandenes Docker Image zurückzugreifen.</p>
+<p>Das nginx-Modul <code>ngx_http_proxy_module</code> erlaubt es anfragen an andere Server weiterzuleiten.</p>
 
-<h2 id="was-ist-let-s-encrypt-https-letsencrypt-org">Was ist <a href="https://letsencrypt.org/">Let´s Encrypt</a>?</h2>
+<h2 id="beispielkonfiguration">Beispielkonfiguration</h2>
 
-<p>Let´s Encrypt ist eine Zertifizierungsstelle die die erstellung von kostenlosen TLS-Zertifikaten anbietet. Ziel des Projektes ist es, jeden Internetdienst eine einfache Verschlüsselung anbieten kann.
-Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten certbot automatisiert.</p>
+<p>location / {
+    proxy_pass       <a href="http://localhost:8000">http://localhost:8000</a>;
+    proxy_set_header Host      $host;
+    proxy_set_header X-Real-IP $remote_addr;
+}</p>
 
-<p><a href="https://hub.docker.com/r/bcecchinato/certbot-rpi/">certbot-rpi on DockerHub</a>
-<a href="https://github.com/bcecchinato/certbot-rpi">certbot-rpi on GitHub</a></p>
+<p>## proxy_pass
+<code>proxy_pass</code> legt das Protokoll und die Adresse eines Proxy-Servers und einer optionalen URI fest, an den ein Standort abgebildet/gemapped werden soll. Als Protokoll können &ldquo;http&rdquo; oder &ldquo;https&rdquo; angegeben werden. Die Adresse kann als Domain Name oder IP-Adresse angegeben werden und ein optionaler Port:</p>
 
-<p>Hier eine kurze anleitung, wie das Docker Image verwendet wird.</p>
-
-<h3 id="pull-des-image">Pull des Image</h3>
-
-<pre><code>docker pull pull bcecchinato/certbot-rpi
+<pre><code>proxy_pass http://localhost:8000/uri/;
 </code></pre>
 
-<h3 id="aktuelle-version-von-let-s-encrypt-certbot-abrufen">Aktuelle Version von Let´s Encrypt certbot abrufen</h3>
+<p>oder als UNIX-Domain-Socket-Pfad, der nach dem Wort &ldquo;Unix&rdquo; angegeben und in Doppelpunkte eingeschlossen ist:</p>
 
-<pre><code>docker run -it --rm bcecchinato/certbot-rpi --help
+<pre><code>proxy_pass http://unix:/tmp/backend.socket:/uri/;
+</code></pre>
+
+<p>Wenn ein Domain-Name auf mehrere Adressen auflöst, werden alle in einer Round-Robin-Methode verwendet. Zusätzlich kann eine Adresse als <a href="http://nginx.org/en/docs/http/ngx_http_upstream_module.html">Servergruppe</a> angegeben werden.</p>
+
+<p>Parameterwert kann Variablen enthalten. In diesem Fall wird, wenn eine Adresse als Domänenname angegeben wird, der Name unter den beschriebenen Servergruppen durchsucht und, falls nicht gefunden, mit einem Resolver ermittelt.</p>
+
+<p>Ein Anforderungs-URI wird wie folgt an den Server übergeben:</p>
+
+<ul>
+<li><p>Wenn die Proxy_pass-Direktive mit einem URI angegeben wird, wird dann, wenn eine Anforderung an den Server übergeben wird, der Teil eines normalisierten Anforderungs-URI, der mit dem Standort übereinstimmt, durch einen URI ersetzt, der in der Anweisung angegeben ist:</p>
+
+<p>location /name/ {
+    proxy_pass <a href="http://127.0.0.1/remote/">http://127.0.0.1/remote/</a>;
+}</p></li>
+
+<li><p>Wenn proxy_pass ohne einen URI angegeben wird, wird der Anforderungs-URI an den Server in der gleichen Form übermittelt, wie er von einem Client gesendet wird, wenn die ursprüngliche Anforderung verarbeitet wird, oder die vollständige normalisierte Anforderungs-URI wird bei der Verarbeitung des geänderten URI übergeben:</p>
+
+<p>location /some/path/ {
+    proxy_pass <a href="http://127.0.0.1">http://127.0.0.1</a>;
+}</p></li>
+</ul>
+
+<h2 id="proxy-set-header">proxy_set_header</h2>
+
+<p>Ermöglicht das Neudefinieren oder Anfügen von Feldern an den an den Proxy-Server übergebenen Anforderungs-Header. Der <em>Wert</em> kann Text, Variablen und deren Kombinationen enthalten. Diese Richtlinien werden von der vorherigen Ebene geerbt, wenn und nur wenn keine <code>proxy_set_header</code>-Direktiven auf der aktuellen Ebene definiert sind. Standardmäßig sind nur zwei Felder neu definiert:</p>
+
+<pre><code>proxy_set_header Host       $proxy_host;
+proxy_set_header Connection close;
+</code></pre>
+
+<p>Wenn das Caching aktiviert ist, werden die Header-Felder &ldquo;If-Modified-Since&rdquo;, &ldquo;If-Unmodified-Since&rdquo;, &ldquo;If-None-Match&rdquo;, &ldquo;If-Match&rdquo;, &ldquo;Range&rdquo; und &ldquo;If-Range&rdquo; von der ursprüngliche Anforderung nicht an den Proxy-Server weitergegeben.</p>
+
+<p>Ein unverändertes &ldquo;Host&rdquo; -Anforderungs-Header-Feld kann wie folgt übergeben werden:</p>
+
+<pre><code>proxy_set_header Host       $http_host;
+</code></pre>
+
+<p>Wenn dieses Feld jedoch nicht in einem Client-Request-Header vorhanden ist, wird nichts übergeben. In einem solchen Fall ist es besser, die Variable $ host zu verwenden - ihr Wert entspricht dem Servernamen im Feld &ldquo;Host&rdquo; -Anforderungsheader oder dem primären Servernamen, falls dieses Feld nicht vorhanden ist:</p>
+
+<pre><code>proxy_set_header Host       $host;
+</code></pre>
+
+<p>Zusätzlich kann der Servername zusammen mit dem Port des Proxy-Servers übergeben werden:</p>
+
+<pre><code>proxy_set_header Host       $host:$proxy_port;
+</code></pre>
+
+<p>Wenn der Wert eines Header-Feldes eine leere Zeichenfolge ist, wird dieses Feld nicht an einen Proxy-Server weitergegeben:</p>
+
+<pre><code>proxy_set_header Accept-Encoding &quot;&quot;;
+</code></pre>
+
+<h2 id="proxy-redirect">proxy_redirect</h2>
+
+<p>Setzt den Text, der in den Headerfeldern &ldquo;Location&rdquo; und &ldquo;Refresh&rdquo; geändert werden soll. Angenommen, ein Proxy-Server hat das Header-Feld <code>&quot;Location: http://localhost:8000/two/some/uri/&quot;</code> zurückgegeben. Die Direktive</p>
+
+<pre><code>proxy_redirect http://localhost:8000/two/ http://frontend/one/;
+</code></pre>
+
+<p>wird diese Zeichenfolge auf <code>&quot;Location: http://frontend/one/some/uri/&quot;</code> umschreiben.</p>
+
+<hr />
+
+<p>Ein Servername kann in der Ersatzzeichenfolge weggelassen werden:</p>
+
+<pre><code>proxy_redirect http://localhost:8000/two/ /;
+</code></pre>
+
+<p>dann wird der Name des primären Servers und der Port, falls abweichend von 80, eingefügt.</p>
+
+<hr />
+
+<p>Die Standardersetzung, die durch den <code>default</code> angegeben wird, verwendet die Parameter der <code>location</code>- und <code>proxy_pass</code>-Direktiven. Daher sind die beiden folgenden Konfigurationen äquivalent:</p>
+
+<pre><code>location /one/ {
+    proxy_pass     http://upstream:port/two/;
+    proxy_redirect default;
+location /one/ {
+    proxy_pass     http://upstream:port/two/;
+    proxy_redirect http://upstream:port/two/ /one/;
+</code></pre>
+
+<p>Der Standardparameter ist nicht zulässig, wenn proxy_pass mit Variablen angegeben wird.</p>
+
+<hr />
+
+<p>Ein Ersatzstring kann Variablen enthalten:</p>
+
+<pre><code>proxy_redirect http://localhost:8000/ http://$host:$server_port/;
+</code></pre>
+
+<p>Eine Umleitung kann auch (1.1.11) Variablen enthalten:</p>
+
+<p>proxy_redirect http: // $ proxy_host: 8000 / /;
+Die Richtlinie kann mit regulären Ausdrücken (1.1.11) angegeben werden. In diesem Fall sollte die Umleitung entweder mit dem &ldquo;~&rdquo; - Symbol für eine Groß- / Kleinschreibung oder mit den &ldquo;~ *&rdquo; - Symbolen für die Groß- / Kleinschreibung beginnen. Der reguläre Ausdruck kann benannte und positionale Erfassungen enthalten, und der Ersatz kann sie verweisen:</p>
+
+<pre><code>proxy_redirect ~^(http://[^:]+):\d+(/.+)$ $1$2;
+proxy_redirect ~*/user/([^/]+)/(.+)$      http://$1.example.com/$2;
+</code></pre>
+
+<p>Es könnte mehrere proxy_redirect Richtlinien geben:</p>
+
+<pre><code>proxy_redirect default;
+proxy_redirect http://localhost:8000/ /;
+proxy_redirect http://www.example.com/ /;
+</code></pre>
+
+<p>Der Aus-Parameter hebt den Effekt aller proxy_redirect-Direktiven auf der aktuellen Ebene auf:</p>
+
+<pre><code>proxy_redirect aus;
+proxy_redirect default;
+proxy_redirect http://localhost:8000/ /;
+proxy_redirect http://www.example.com/ /;
+</code></pre>
+
+<p>Mit dieser Anweisung ist es auch möglich, Hostnamen zu relativen Weiterleitungen hinzuzufügen, die von einem Proxy-Server ausgegeben werden:</p>
+
+<pre><code>proxy_redirect / /;
 </code></pre>
 
 
@@ -639,8 +759,6 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -656,6 +774,9 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -673,6 +794,7 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
                 
                     
+                    
                 
                 
 
@@ -686,21 +808,8 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -750,6 +859,26 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -788,7 +917,6 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
                 
                     
-                    
                 
                 
 
@@ -801,9 +929,6 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -820,7 +945,6 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
             
                 
-                    
                     
                 
                 
@@ -840,9 +964,6 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -878,10 +999,10 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
 
 
         
-            <a class="nav nav-prev" href="../../docker/rpi-hugo/" title="rpi-hugo"> <i class="fa fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="../../../netzwerk/nginx/location/" title="Server Unterodrner (locations)"> <i class="fa fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="../../rpi/" title="Raspberry Pi" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="../../../netzwerk/nginx/gitlab_domain_subfolder/" title="GitLab hinter nginx-Revers-Proxy" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -890,18 +1011,18 @@ Dabei ist der Prozess zur erstellung des Zertifikats über den so genannten cert
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>    
 
-    <script src="../../js/clipboard.min.js"></script>
-<script src="../../js/featherlight.min.js"></script>
-<script src="../../js/html5shiv-printshiv.min.js"></script>
-<script src="../../js/highlight.pack.js"></script>
+    <script src="../../../js/clipboard.min.js"></script>
+<script src="../../../js/featherlight.min.js"></script>
+<script src="../../../js/html5shiv-printshiv.min.js"></script>
+<script src="../../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script src="../../js/modernizr.custom.71422.js"></script>
-<script src="../../js/learn.js"></script>
-<script src="../../js/hugo-learn.js"></script>
+<script src="../../../js/modernizr.custom.71422.js"></script>
+<script src="../../../js/learn.js"></script>
+<script src="../../../js/hugo-learn.js"></script>
 
 
-<link href="../../mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
-<script src="../../mermaid/mermaid.js"></script>
+<link href="../../../mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+<script src="../../../mermaid/mermaid.js"></script>
 <script>mermaid.initialize({startOnLoad:true});</script>
     
 
