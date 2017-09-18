@@ -10,8 +10,8 @@ weight = 60
 
 * [Install GitLab under a relative URL](https://docs.gitlab.com/ce/install/relative_url.html)
 
-{{% alert Hinweis %}} Diese Anleitung beschreibt wie GitLab unter einer relativen URL verwendet werden kann, **nur** bei "installation from sourve". Wenn alternativ zur installation ein *Omnibus* package verwendet wurde, [sind die schritte unterschiedlich](http://docs.gitlab.com/omnibus/settings/configuration.html#configuring-a-relative-url-for-gitlab).  
+{{% alert Hinweis %}} Diese Anleitung beschreibt wie GitLab unter einer relativen URL verwendet werden kann, **nur** bei "installation from source". Wenn alternativ zur installation ein *Omnibus* package verwendet wurde, [sind die schritte unterschiedlich](http://docs.gitlab.com/omnibus/settings/configuration.html#configuring-a-relative-url-for-gitlab).  
 Nutze diese Anleitung zusammen mit dem [installation guid](https://docs.gitlab.com/ce/install/installation.html), wenn du GitLAb das erste mal installiert.{{% /alert %}}
 
 * [GitLab Docker mit relativen URL](https://hub.docker.com/r/sameersbn/gitlab/#deploy-to-a-subdirectory-relative-url-root)
-Dieses Docker Image wird auch von der QNAP Containerstation verwendet.
+Dieses Docker Image verwende ich auch in meinem NAS (QNAP Containerstation).
