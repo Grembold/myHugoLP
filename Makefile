@@ -6,6 +6,9 @@ init:
 build:
 	docker run --rm -v `pwd`:/www grembold/rpi-hugo
 
+draft:
+	docker run --rm -v `pwd`:/www grembold/rpi-hugo -D
+
 test:
 	docker run --rm -p 1313:1313 -v `pwd`:/www grembold/rpi-hugo server -b http://192.168.178.141 --bind=0.0.0.0 -w -D
 

@@ -11,4 +11,8 @@ weight = 30
 
 Mit Hilfe der Secure Shell (SSH) kann mann sich mit der Console des Raspberry Pi verbinden und Linux-Befehle auf dem pi ausführen.
 
+Links
+* https://willy-tech.de/    
+* https://willy-tech.de/pi-control/
+
 {{%children style="h2" description="true"%}}

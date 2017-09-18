@@ -7,18 +7,11 @@
 	"content": " Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu müssen. Muss zunächst eine Verschlüsselung eingerichtet werden. Hierzu gibt es je Verbindung einen öffentlichen und einen privaten schlüssel. Der öffentliche Schlüssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Gerät verbleibt mit dem die Verbindung zu pi aufgebaut werden soll.\nZum generieren der Schlüssel gibt es verschiedene möglichkeiten\nSchlüssen mit \u0026ldquo;putty\u0026rdquo; erstelen. In der Programmsammlung von putty ist auch ein Key-Generator enthalte \u0026lsquo;puttygen.exe\u0026rsquo;. Mit diesem lässt sich ein öffentlicher (kommte auf den pi) und ein privater (verbleibt auf dem Gerät) erstellt werden.\nöffentlichen Schlüssel auf pi übertragen Zunächst müssen wir und auf dem pi mit dem Benutzer anmelder, unter dem später auch die Verbindung laufen soll. In unserem Fall melden wir auns also unter pi an. Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordner und eine Datei erstellen.\n$ mkdir ~/.ssh $ touch ~/.ssh/authorized_keys  Jetzt öffnen wir diesen datei nano ~/.ssh/authorized_keys und kopieren den Inhal des public key hinein. Dabei müssen wir darauf achten, dass alles in einer Zeile geschrieben steht.\nFür Olaf mit --text läst sich ein Befehl für copy-und paste freigeben.\n"
 },
 {
-	"uri": "/netzwerk/fritzbox/",
-	"title": "FritzBox",
-	"tags": [],
-	"description": "FritzBox",
-	"content": " Einstellungen zur Fritzbox Port 443 weiterleiten klappt nicht "
-},
-{
 	"uri": "/netzwerk/",
 	"title": "IT-Struktur",
 	"tags": [],
 	"description": "Übersicht des Datenfluss rund ums Web",
-	"content": " Datenfluss Unter IT-Struktur zeige ich, wie ich mein Netzwerk und den Datenfluss für die \u0026ldquo;öffentlich\u0026rdquo; erreichbaren teile aufgebaut habe.\nIch habe einen ganz normalen Internet-Anschluss mit einer Fritzbox und ein paar Servern (meist RaspberryPi) auf der anderen Seite.\nDa sich die öffentliche IP-Adresse der Fritzbox täglich ändert, habe ich mich bei einem dynDNS anbieter angemeldet und bis so über blume.goip.de immer erreichbar.\ndie Fritzbox so konfiguriert, dass die weiterleitung über einen Domainnamen erfolgt.\nKostenlose DynDNS Anbieter aus Deutschland  goip.de ddnss.de  Quellen  autrunk@wordpress antiun codingpedia   FritzBox  FritzBox\n NginX Revers-Proxy  NginX als Revers-Proxy einrichten\n WebServer  Einen Webserver mit NginX einrichten\n "
+	"content": " Unter IT-Struktur wird dokumentiert, wie ich mein Netzwerk und den Datenfluss für die \u0026ldquo;öffentlich\u0026rdquo; erreichbaren Teile aufgebaut habe.\nFritzBox Ich habe einen ganz normalen Internet-Anschluss mit einer Fritzbox und ein paar Servern (meist RaspberryPi) auf der anderen Seite.\nDa sich die öffentliche IP-Adresse der Fritzbox täglich ändert, habe ich mich bei einem dynDNS anbieter angemeldet und bis so über blume.goip.de immer erreichbar. Wie man dies in der FritzBox einrichtet und welche Einstellung zum weiterleiten nötig sind habe ich hier beschrieben.\nRevers-Proxy Damit ich verschiedene Dienste oder Webseiten unter einer Domain erreichen kann, gehen alle Anfragen zunächst an einen nginx revers-proxy. Dieser leitet http Anfragen an verschiedene Server dahinter weiter. Im einfachsten fall bedeutet dass, zu Beispiel (www.blume.goip.de) eine schöne Famielen Hompage zeigt, (magic-brocoli.blume.goip.de) der Sohn seinen eigenen Blog schreiben kann und man unter (prv.blume.goip.de/urlaub2010/) die letzten Urlaubsfotos sienen Freunden zeigt.\nWie der Revers-Proxy eingerichtet wird seige ich hier.\nWebCluster WebCluster ist hier vieleicht etwas übertrieben, aber hier zeige ich einige Webserver und Dienste die ich verwende. Beschreibungen findet ihr hier:\n GitLab QNAP/NAS Web Blog Hausautomatisierung WebCluster mit Docker Swarm  "
 },
 {
 	"uri": "/docker/rpi-hugo/",
@@ -29,10 +22,10 @@
 },
 {
 	"uri": "/netzwerk/nginx/",
-	"title": "NginX Revers-Proxy",
+	"title": "Revers-Proxy",
 	"tags": [],
 	"description": "NginX als Revers-Proxy einrichten",
-	"content": " NginX als Revers proxy einrichten @Olaf: hier geht es weiter\nNginx als Reverse Proxy / Load Balancer\n Let´s Encrypt  Mit Let´s Encrypt ein Zertifikat erstellen\n Server Ports und Namen  Wie NginX entscheidet, welcher Server den Request bearbeiten soll.\n Server Unterodrner (locations)  Wie NginX entscheidet, welche location den Request bearbeiten soll.\n HTTP Proxy  HTTP-Anfragen an andere Server weiterleiten.\n GitLab hinter nginx-Revers-Proxy  HTTP-Anfragen an andere Server weiterleiten.\n logging für favicon.ico location = /favicon.ico { log_not_found off; access_log off; }   1 2 3  . "
+	"content": " Damit ich verschiedene Dienste oder Webseiten unter einer Domain erreichen und zentral absichern kann, gehen alle Anfragen zunächst an einen nginx revers-proxy. Dieser leitet http Anfragen an verschiedene Server dahinter weiter. Dies bedeutet, das zu Beispiel (www.blume.goip.de) an einen anderen Server weitergeleitet wird als (doc.blume.goip.de) oder (dev.blume.goip.de/gitlab/).\nUnter der URL blume.goip.de wird zum beispiel eine statische Webseite aufgerufen, die nur aus einer Seite besteht. Dies erledigt der WebServer 1 (WEB01).\nUnter der URL doc.blume.goip.de wird zum Beispiele diese Dokumentation aufgerufen, was wiederum Webserver 2 (WEB02) erledigt.\nDa so gut wie jedes Gerät im Heimischen Netzwerk heutzutage eine Webseite hat, könnte man damit auch den eigenen NAS, eine Hausautomatisierung oder die Webseite des Drucker aus dem Internet erreichbar machen.\nNginX als Revers proxy einrichten @Olaf: hier geht es weiter\nNginx als Reverse Proxy / Load Balancer\n Let´s Encrypt  Mit Let´s Encrypt ein Zertifikat erstellen\n Server Ports und Namen  Wie NginX entscheidet, welcher Server den Request bearbeiten soll.\n Server Unterodrner (locations)  Wie NginX entscheidet, welche location den Request bearbeiten soll.\n HTTP Proxy  HTTP-Anfragen an andere Server weiterleiten.\n GitLab hinter nginx-Revers-Proxy  HTTP-Anfragen an andere Server weiterleiten.\n logging für favicon.ico location = /favicon.ico { log_not_found off; access_log off; }   1 2 3  . "
 },
 {
 	"uri": "/netzwerk/nginx/letsencrypt/",
@@ -56,11 +49,11 @@
 	"content": " Docker Also auf dem Raspberry Pi lässt sich zum Glück inzwischen auch docker und auch swarm ausführen.\nDabei ist zu beachten dass die images aus  DockerHub Auf dieser Seite möchte ich Anleitungen für verschiedene Bastelprojekte von mir dokumentieren.\n rpi-hugo  hugo docker image für raspberry pi\n certbot-rpi  Raspberry Pi compatible Docker base image with Let´s Encrypt\n "
 },
 {
-	"uri": "/netzwerk/webserver/",
-	"title": "WebServer",
+	"uri": "/rpi/rpimonitor/",
+	"title": "RPi-Monitor",
 	"tags": [],
-	"description": "Einen Webserver mit NginX einrichten",
-	"content": "Hugo Blog\nFhem\nSmartVisu\nWebCluster mit Docker Swarm\nMonitoren wie lange der eingene Server verfügbar war Beispiel trashserver.net UpTimeRobot\nWeb Server Survey\n(FreeFileSync)[https://www.freefilesync.org/] solte ich mir mal ansehen, um die Daten mit der NAS bazugleichen.\nSo, damit ich das nicht immer wieder vergesse. Im Repository dieser webseite sind die Themes als git submoldule eingebunden. Damit die aktuallisiert werden , muss folgenden ausgeführt werden\ngit submodule foreach git pull  Will man ein neues theme hinzufügen, som muss man mit $ git submodule add https://github.com/sethmacleod/docdock.git themes/docock in das eigene repository laden und anschließend in die initgit.sh integrieren $ git submodule init $ git submodule update\n"
+	"description": "Anzeigen des aktuellen Gesundheits-Zustand des Rpi",
+	"content": " Der aktuelle Zustand der eigenen Hinbeere lässt sich sehr schön über eine Web-Oberfläche anzeigen. Hierfür habe ich zwei Tool einmal ausprobiert.\nRPi Monitor Das Tool von Xavier Berger lässt sich dank umfangreichen Installationsscript sehr leicht installieren. Eine gute Anleitung zu Installation findet man hier und hier\n RPi-Homepage GitHub Soruce GitHub deb Pakete  Raspcontrol Raspcontrol ist ebenfalls ein web control center für den Raspberry pi. Das Programm ist schon durch einige Hände gegangen und wird vom wahrscheinlich ursprünglichen Entwickler Bioshox nicht mehr gepflegt. harmon25 hat das Projekt übernommen, doch der aktuellste Stand der Fork von hdijkema zu sein.\nDie Installation ist nicht ganz zu einfach wie beim RPi Monitor, lässt sich dennoch in 10 Minuten bewerkstelligen.\n"
 },
 {
 	"uri": "/netzwerk/nginx/servername/",
@@ -74,7 +67,7 @@
 	"title": "Raspberry Pi",
 	"tags": [],
 	"description": "Projekte rund um die kleine Himbeere",
-	"content": " Secure Shell Mit Hilfe der Secure Shell (SSH) kann mann sich mit der Console des Raspberry Pi verbinden und Linux-Befehle auf dem pi ausführen.\n Konfiguration  Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu müssen. Muss zunächst eine Verschlüsselung eingerichtet werden. Hierzu gibt es je Verbindung einen öffentlichen und einen privaten schlüssel. Der öffentliche Schlüssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Gerät verbleibt mit dem die Verbindung zu pi aufgebaut werden soll. Zum generieren der Schlüssel gibt es verschiedene möglichkeiten Schlüssen mit \u0026ldquo;putty\u0026rdquo; erstelen. In der Programmsammlung von putty ist auch ein Key-Generator enthalte \u0026lsquo;puttygen.\n "
+	"content": " Secure Shell Mit Hilfe der Secure Shell (SSH) kann mann sich mit der Console des Raspberry Pi verbinden und Linux-Befehle auf dem pi ausführen.\nLinks * https://willy-tech.de/\n* https://willy-tech.de/pi-control/\n Konfiguration  Um sich mit dem pi zu verbinden, ohne ein passwort eingeben zu müssen. Muss zunächst eine Verschlüsselung eingerichtet werden. Hierzu gibt es je Verbindung einen öffentlichen und einen privaten schlüssel. Der öffentliche Schlüssel muss auf dem pi hinterlegt werden, wohingegen der private auf dem PC/Gerät verbleibt mit dem die Verbindung zu pi aufgebaut werden soll. Zum generieren der Schlüssel gibt es verschiedene möglichkeiten Schlüssen mit \u0026ldquo;putty\u0026rdquo; erstelen. In der Programmsammlung von putty ist auch ein Key-Generator enthalte \u0026lsquo;puttygen.\n RPi-Monitor  Anzeigen des aktuellen Gesundheits-Zustand des Rpi\n "
 },
 {
 	"uri": "/netzwerk/nginx/location/",

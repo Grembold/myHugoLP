@@ -7,11 +7,6 @@
   </url>
   
   <url>
-    <loc>/netzwerk/fritzbox/</loc>
-    <lastmod>2017-09-14T18:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/netzwerk/</loc>
     <lastmod>2017-09-08T16:35:00+02:00</lastmod>
   </url>
@@ -42,8 +37,7 @@
   </url>
   
   <url>
-    <loc>/netzwerk/webserver/</loc>
-    <lastmod>2017-09-14T18:00:00+00:00</lastmod>
+    <loc>/rpi/rpimonitor/</loc>
   </url>
   
   <url>
