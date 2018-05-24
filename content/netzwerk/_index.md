@@ -23,6 +23,7 @@ Wie man dies in der FritzBox einrichtet und welche Einstellung zum weiterleiten 
 Damit ich verschiedene Dienste oder Webseiten unter einer Domain erreichen kann, gehen alle Anfragen zunächst an einen nginx revers-proxy. Dieser leitet http Anfragen an verschiedene Server dahinter weiter. Im einfachsten fall bedeutet dass, zu Beispiel (www.blume.goip.de) eine schöne Famielen Hompage zeigt, (magic-brocoli.blume.goip.de) der Sohn seinen eigenen Blog schreiben kann und man unter (prv.blume.goip.de/urlaub2010/) die letzten Urlaubsfotos sienen Freunden zeigt.  
 Wie der Revers-Proxy eingerichtet wird seige ich [hier](nginx/).
 
+![reverseproxy](/images/reverseproxy.png)
 ---
 
 #### [WebCluster](webserver/)

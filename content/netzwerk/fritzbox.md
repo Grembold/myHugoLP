@@ -2,7 +2,7 @@
 title:  "FritzBox"
 description:    "FritzBox"
 date:   2017-09-14T18:00:00Z
-draft:  true
+draft:  false
 weight: 10
 ---
 
