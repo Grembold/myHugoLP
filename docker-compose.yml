@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  doc:
+    image: tobi312/rpi-nginx:latest
+    restart: always
+    networks:
+      - webproxy
+    volumes:
+      - /home/pi/myHugoLP/public:/var/www/html:ro
+    labels:
+      - "traefik.frontend.rule=Host:doc.blume.goip.de"
+      - "traefik.docker.network=webproxy"
+      - "traefik.enable=true"
+      - "traefik.basic.frontend.rule=Host:doc.blume.goip.de"
+      - "traefik.basic.port=80"
+      - "traefik.basic.protocol=http"
+
+networks:
+  webproxy:
+    external: true
