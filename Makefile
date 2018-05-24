@@ -9,8 +9,12 @@ build:
 draft:
 	docker run --rm -v `pwd`:/www grembold/rpi-hugo -D
 
+start:
+	docker-compose up -d  --force-recreate;
+
 test:
-	docker run --rm -p 1313:1313 -v `pwd`:/www grembold/rpi-hugo server -b http://192.168.178.141 --bind=0.0.0.0 -w -D
+	docker-compose up --force-recreate;
+	#docker run --rm -p 1313:1313 -v `pwd`:/www grembold/rpi-hugo server -b http://192.168.178.141 --bind=0.0.0.0 -w -D
 
 version:
 	docker run --rm grembold/rpi-hugo version

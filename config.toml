@@ -31,23 +31,17 @@ url = "https://github.com/Grembold/myHugoLP"
 weight = 10
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-camera'></i> Showcases"
-url = "/showcase/"
-weight = 11
-
-[[menu.shortcuts]]
-name = "<i class='fa fa-bookmark'></i> Hugo Documentation"
-identifier = "hugodoc"
-url = "https://gohugo.io/"
-weight = 20
-
-[[menu.shortcuts]]
 name = "<i class='fa fa-bookmark'></i> Docdock Documentation"
 identifier = "DocDock"
 url = "http://docdock.netlify.com/"
-weight = 21
+weight = 20
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-bullhorn'></i> Impressum"
 url = "/impressum/"
 weight = 30
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-external-link-square'></i> Links"
+url = "/links/"
+weight = 31
