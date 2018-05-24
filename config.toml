@@ -1,4 +1,5 @@
 baseurl = "/"
+relativeURLS=true
 languageCode = "de-de"
 DefaultContentLanguage = "de"
 enableRobotsTXT = true
