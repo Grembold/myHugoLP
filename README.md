@@ -5,3 +5,5 @@
 Dieses Repository wird verwendet um die private Web-Seite [blume.goip.de](http://blume.goip.de) zu generieren.
 
 Dieser Blog verwendet den `ststic site generator` [hugo](https://gohugo.io).
+
+https://container-solutions.com/understanding-volumes-docker/
