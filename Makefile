@@ -1,4 +1,4 @@
-default: build 
+default: build start 
 
 init:
 	docker run --rm -v `pwd`:/www grembold/rpi-hugo new site . --force
@@ -10,7 +10,7 @@ draft:
 	docker run --rm -v `pwd`:/www grembold/rpi-hugo -D
 
 start:
-	docker-compose up -d  --force-recreate;
+	docker stack deploy --resolve-image never --compose-file docker-compose.yml myHugoLP
 
 test:
 	docker-compose up --force-recreate;

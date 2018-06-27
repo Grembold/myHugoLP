@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="de" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.40.3" />
+    <meta name="description" content="Einrichten von Fernzugriff mit Schlüsseldateien">
+
+
+    <title>SSH und keys :: Meine Hugo Seite</title>
+    <link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon" />
+    <link href="../../css/nucleus.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/hybrid.css" rel="stylesheet">
+    <link href="../../css/featherlight.min.css" rel="stylesheet">
+    <link href="../../css/horsey.css" rel="stylesheet">
+    
+    <link href="../../css/original.css" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/rpi/ssh_key/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Blume Dokumentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="../../js/lunr.min.js"></script>
+<script type="text/javascript" src="../../js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "\/";
+</script>
+<script type="text/javascript" src="../../js/search.js"></script>
+
+    
+  </div>
+
+  
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="../../"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+        
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/">
+        <span>IT-Struktur</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/fritzbox/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/fritzbox/">
+        <span>FritzBox</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/nginx/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/nginx/">
+        <span>Revers-Proxy</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/letsencrypt/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/letsencrypt/">
+        <span>Let´s Encrypt</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/servername/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/servername/">
+        <span>Server Ports und Namen</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/location/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/location/">
+        <span>Server Unterodrner (locations)</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/proxy/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/proxy/">
+        <span>HTTP Proxy</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/gitlab_domain_subfolder/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/gitlab_domain_subfolder/">
+        <span>GitLab hinter nginx-Revers-Proxy</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/webserver/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/webserver/">
+        <span>WebServer</span>
+
+        
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docker/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../docker/">
+        <span>docker</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/rpi_install_docker/" class="dd-item
+     
+      ">
+        <a href="../../docker/rpi_install_docker/">
+        <span>Installation</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/rpi_install_compose/" class="dd-item
+     
+      ">
+        <a href="../../docker/rpi_install_compose/">
+        <span>Installation docker-compose</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/swarm/" class="dd-item
+     
+      ">
+        <a href="../../docker/swarm/">
+        <span>swarm</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/cluster/" class="dd-item
+     
+      ">
+        <a href="../../docker/cluster/">
+        <span>cluster</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docker/container/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../docker/container/">
+        <span>container</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/container/rpi-hugo/" class="dd-item
+     
+      ">
+        <a href="../../docker/container/rpi-hugo/">
+        <span>rpi-hugo</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/container/certbot/" class="dd-item
+     
+      ">
+        <a href="../../docker/container/certbot/">
+        <span>certbot-rpi</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/container/pi-hole/" class="dd-item
+     
+      ">
+        <a href="../../docker/container/pi-hole/">
+        <span>pi-hole</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/rpi/" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../../rpi/">
+        <span>Raspberry Pi</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/configuration/" class="dd-item
+     
+      ">
+        <a href="../../rpi/configuration/">
+        <span>Rpi einrichten</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/ssh_key/" class="dd-item
+     active
+      ">
+        <a href="../../rpi/ssh_key/">
+        <span>SSH und keys</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/rpimonitor/" class="dd-item
+     
+      ">
+        <a href="../../rpi/rpimonitor/">
+        <span>RPi-Monitor</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+        
+
+        
+        <section id="shortcuts">
+            
+                <li class="" role="">
+                    <h3>More</h3>
+                    <a href="https://github.com/Grembold/myHugoLP"><i class='fa fa-github'></i> Github repo</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="http://docdock.netlify.com/"><i class='fa fa-bookmark'></i> Docdock Documentation</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="../../impressum/"><i class='fa fa-bullhorn'></i> Impressum</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="../../links/"><i class='fa fa-external-link-square'></i> Links</a>
+                    
+                </li>
+            
+        </section>    
+        
+        
+            <a class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> </a>
+        
+
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+              
+              
+              
+            <div id="top-github-link">
+              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/rpi/ssh_key.md" target="blank">
+                <i class="fa fa-code-fork"></i>
+                
+              </a>
+            </div>
+              
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                <span class="links">
+                
+
+
+
+
+
+
+
+ <a href='../../'>DocDock für Blume</a> > <a href='../../rpi/'>Raspberry Pi</a> > SSH und keys
+
+ 
+
+ 
+
+   
+                </span>
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#secure-shell">Secure Shell</a>
+<ul>
+<li><a href="#teil-1-schlüssen-mit-puttygen-erstelen">Teil 1 - Schlüssen mit <strong>puttygen</strong> erstelen.</a></li>
+<li><a href="#teil-2-schlüssel-verwenden">Teil 2 - Schlüssel verwenden</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>SSH und keys</h1>
+          
+
+
+
+
+
+
+<h2 id="secure-shell">Secure Shell</h2>
+
+<p>Mit Hilfe der Secure Shell (SSH) kann mann sich mit der Console des Raspberry Pi verbinden und Linux-Befehle auf dem pi ausführen.</p>
+
+<p>Um sich mit dem pi zu verbinden, ohne ein Passwort eingeben zu müssen, muss Authentifizierungs Schlüsselung anlegen und den System bekannt machen.
+Hierzu gibt es je Authentifizierung einen <em>öffentlichen</em> und einen <em>privaten</em> Schlüssel.Der <em>öffentliche</em> Schlüssel wird auf dem pi hinterlegt werden, wohingegen der <em>private</em> auf dem PC/Gerät verbleibt mit dem die Verbindung zu pi aufgebaut werden soll.</p>
+
+<p>Zum generieren der Schlüssel gibt es verschiedene möglichkeiten
+Die einrichung erfolgt in zwei Schritten:
+1. Schlüsselpaar erstellen
+2. Schlüssel verteilen</p>
+
+<h3 id="teil-1-schlüssen-mit-puttygen-erstelen">Teil 1 - Schlüssen mit <strong>puttygen</strong> erstelen.</h3>
+
+<p>In der Programmsammlung von <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.70.html">putty</a> ist auch ein Key-Generator enthalten &lsquo;puttygen.exe&rsquo;. Mit diesem lässt sich auf einfache weise ein Schlüsselpaar erstellen. Also exe herunterladen und starten.
+<div class="panel panel-default">
+	
+	<div class="panel-body"><img src="../../images/puttyKeyGen_001_SelectParmas.png" alt="SelectParmas" /></div>
+	<div class="panel-footer">Verschlüsselungstyp auf: <strong>ECDSA</strong> und <strong>nistp384</strong> stellen</div>
+</div>
+</p>
+
+<p>Den Schlüsseltyp auswählen (ECDSA und nistp384) und auf Gererate klicken.
+<div class="panel panel-default">
+	
+	<div class="panel-body"><img src="../../images/puttyKeyGen_002_Generate.png" alt="Generate" /></div>
+	<div class="panel-footer">Maus im gelb markiertem Bereich bewegen!</div>
+</div>
+</p>
+
+<p>Anschließend wird die erstellung der Schlüssel gestartet. Puttyken verwendet dabei die Mausbewegung als Zufallsgenerator. Daher muss der Mauszeiger im oberen bereich hin und her bewegt werden.<br />
+<div class="panel panel-default">
+	
+	<div class="panel-body"><p><img src="../../images/puttyKeyGen_003_SaveKey.png" alt="SaveKey" /></p>
+</div>
+	<div class="panel-footer">Der obere Teil ist bereits der <em>öffentliche</em> Schlüssel für den Pi</div>
+</div>
+</p>
+
+<p>Zum Schluss wird mit <strong>Save private key</strong> der <em>private</em> Schlüssel auf der Festplatte abgelegt.
+Es ist sehr hilfreich zuvor unter <em>Key comment</em> den Rechnernamen von dem die Verbindung aufgebaut werden soll einzutragen. Dies erleichter später die Unterscheidung der einzelnen Keys.<br />
+Im oberen Teil sehen wird bereit die <em>öffentlichen</em> Schlüssel. Diesen kopiert man ab besten schonmal mit <code>STR+C</code> in die Zwischenablage, dann geht es mit dem zeiten Teil weiter.</p>
+
+<h3 id="teil-2-schlüssel-verwenden">Teil 2 - Schlüssel verwenden</h3>
+
+<p>Zunächst müssen wir uns auf dem pi klassisch mit Benutzername und Password anmelden.
+In unserem Fall melden wir auns also als pi an.
+Für diesen Benutzer müssen wir zunächst in seinem Homeverzeichniss einen Ordner für die erlaubten Schlüssel anlegen. Dies ist bei Raspian immer da versteckte Verzeichnis <strong>.ssh</strong> im Homeverzeichnes.</p>
+
+<pre><code>mkdir -p ~/.ssh;
+chmod 700 ~/.ssh;
+touch ~/.ssh/authorized_keys;
+chmod 600 ~/.ssh/authorized_keys;
+</code></pre>
+
+<p>Beim letzten befehl muss der mittlere Teil <strong>&ldquo;ecdsa-sha-nistp384 AAA&hellip;==MeinPC&rdquo;</strong> durch den <em>öffentlichen</em> Schlüssel aus puttyken ersetzt werden.</p>
+
+<pre><code>echo ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBEKt1cRt+2PhzaqYT2fsCUv7gQKqGImPZtR7KpyE+KaJi+a4IHVL0nNshl4IcngTKG6aDG6H0w217/22YN9szO5cMWz6jUhVpZK6I3d/IX9fiT/gFri2UD3S8UQnFUw8GA== OlafsHomePC &gt;&gt; ~/.ssh/authorized_keys;
+</code></pre>
+
+<p>Nun Teilen wir noch putty mit, das es bei der Authentifizierung die <em>private</em> Schlüsseldatei auf unserem Rechner verwnden soll.</p>
+
+<p>TODO: Hier bild einfügen!!</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+
+        
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="../../rpi/configuration/" title="Rpi einrichten"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="../../rpi/rpimonitor/" title="RPi-Monitor" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>    
+
+    <script src="../../js/clipboard.min.js"></script>
+<script src="../../js/featherlight.min.js"></script>
+<script src="../../js/html5shiv-printshiv.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="../../js/modernizr.custom.71422.js"></script>
+<script src="../../js/learn.js"></script>
+<script src="../../js/hugo-learn.js"></script>
+
+
+<link href="../../mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+<script src="../../mermaid/mermaid.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+  </body>
+</html>
+

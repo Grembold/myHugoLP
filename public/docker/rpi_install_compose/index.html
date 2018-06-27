@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="de" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.40.3" />
+    <meta name="description" content="Installation von Docker-Compose auf dem Raspberry Pi">
+
+
+    <title>Installation docker-compose :: Meine Hugo Seite</title>
+    <link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon" />
+    <link href="../../css/nucleus.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/hybrid.css" rel="stylesheet">
+    <link href="../../css/featherlight.min.css" rel="stylesheet">
+    <link href="../../css/horsey.css" rel="stylesheet">
+    
+    <link href="../../css/original.css" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/docker/rpi_install_compose/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Blume Dokumentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="../../js/lunr.min.js"></script>
+<script type="text/javascript" src="../../js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "\/";
+</script>
+<script type="text/javascript" src="../../js/search.js"></script>
+
+    
+  </div>
+
+  
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="../../"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+        
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/">
+        <span>IT-Struktur</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/fritzbox/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/fritzbox/">
+        <span>FritzBox</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/nginx/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/nginx/">
+        <span>Revers-Proxy</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/letsencrypt/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/letsencrypt/">
+        <span>Let´s Encrypt</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/servername/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/servername/">
+        <span>Server Ports und Namen</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/location/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/location/">
+        <span>Server Unterodrner (locations)</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/proxy/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/proxy/">
+        <span>HTTP Proxy</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/gitlab_domain_subfolder/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/gitlab_domain_subfolder/">
+        <span>GitLab hinter nginx-Revers-Proxy</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/webserver/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/webserver/">
+        <span>WebServer</span>
+
+        
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docker/" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../../docker/">
+        <span>docker</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/rpi_install_docker/" class="dd-item
+     
+      ">
+        <a href="../../docker/rpi_install_docker/">
+        <span>Installation</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/rpi_install_compose/" class="dd-item
+     active
+      ">
+        <a href="../../docker/rpi_install_compose/">
+        <span>Installation docker-compose</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/swarm/" class="dd-item
+     
+      ">
+        <a href="../../docker/swarm/">
+        <span>swarm</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/cluster/" class="dd-item
+     
+      ">
+        <a href="../../docker/cluster/">
+        <span>cluster</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docker/container/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../docker/container/">
+        <span>container</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/container/rpi-hugo/" class="dd-item
+     
+      ">
+        <a href="../../docker/container/rpi-hugo/">
+        <span>rpi-hugo</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/container/certbot/" class="dd-item
+     
+      ">
+        <a href="../../docker/container/certbot/">
+        <span>certbot-rpi</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/container/pi-hole/" class="dd-item
+     
+      ">
+        <a href="../../docker/container/pi-hole/">
+        <span>pi-hole</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/rpi/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../rpi/">
+        <span>Raspberry Pi</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/configuration/" class="dd-item
+     
+      ">
+        <a href="../../rpi/configuration/">
+        <span>Rpi einrichten</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/ssh_key/" class="dd-item
+     
+      ">
+        <a href="../../rpi/ssh_key/">
+        <span>SSH und keys</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/rpimonitor/" class="dd-item
+     
+      ">
+        <a href="../../rpi/rpimonitor/">
+        <span>RPi-Monitor</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+        
+
+        
+        <section id="shortcuts">
+            
+                <li class="" role="">
+                    <h3>More</h3>
+                    <a href="https://github.com/Grembold/myHugoLP"><i class='fa fa-github'></i> Github repo</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="http://docdock.netlify.com/"><i class='fa fa-bookmark'></i> Docdock Documentation</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="../../impressum/"><i class='fa fa-bullhorn'></i> Impressum</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="../../links/"><i class='fa fa-external-link-square'></i> Links</a>
+                    
+                </li>
+            
+        </section>    
+        
+        
+            <a class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> </a>
+        
+
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+              
+              
+              
+            <div id="top-github-link">
+              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/docker/rpi_install_compose.md" target="blank">
+                <i class="fa fa-code-fork"></i>
+                
+              </a>
+            </div>
+              
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                <span class="links">
+                
+
+
+
+
+
+
+
+ <a href='../../'>DocDock für Blume</a> > <a href='../../docker/'>docker</a> > Installation docker-compose
+
+ 
+
+ 
+
+   
+                </span>
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#update-20185-08-09">Update (20185.08.09)</a></li>
+<li><a href="#der-leichte-weg-nicht-der-beste">Der Leichte weg (nicht der Beste)</a></li>
+<li><a href="#neue-version-erstellen">neue Version erstellen</a>
+<ul>
+<li><a href="#build-and-install-docker-compose">Build and install docker-compose</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>Installation docker-compose</h1>
+          
+
+
+
+
+
+
+<h2 id="update-20185-08-09">Update (20185.08.09)</h2>
+
+<p>Docker compose ist ein seperates projekt, das in python geschriben wurde. Seit docker
+Version 1.12 ist dies Funktionalität in die Docker-Engine integreirt worde. <a href="https://vsupalov.com/difference-docker-compose-and-docker-stack/">Link</a>
+Seit <code>docker verion 1.12</code> ist die intallation von docker-compose nicht mehr nötig und man kann äquivalent den befehl <code>docker stack</code>verweden.</p>
+
+<h2 id="der-leichte-weg-nicht-der-beste">Der Leichte weg (nicht der Beste)</h2>
+
+<p>Die Repositories von Raspian enthalten zum Glück inzwischen direkt eine docker-compose version. So kann mit dem gebräuchlichen Mittel <code>apt</code> direkt installiert werden</p>
+
+<pre><code>sudo apt install -y docker-compose
+docker-compose version
+</code></pre>
+
+<p>Leider zeigt sich, dass man hier eine nicht ganz so frische Version erhält, so dass zur zweiten Variante zu raten ist.</p>
+
+<h2 id="neue-version-erstellen">neue Version erstellen</h2>
+
+<p>Sollte die Version aus dem Repository zu alt sein, lässt sich die neuste Version auch direkt auf dem Raspi compilieren.</p>
+
+<pre><code>sudo apt update
+sudo apt install git
+mkdir docker-compose
+cd docker-compose
+git clone https://github.com/docker/compose.git
+cd compose/
+git checkout release
+</code></pre>
+
+<p>Auf dem Raspberry pi 1 musste ich den zugrunde liegenden container änder, da es immer weider zur Fehlermeldung <code>exit with non-zero code: 132</code>gekommen ist.
+In der Datei Dockerfile.armhf habe ich gleich in der ersten Zeile</p>
+
+<pre><code>FROM  armhf/debian
+</code></pre>
+
+<p>durch</p>
+
+<pre><code>FROM resin/rpi-raspbian
+</code></pre>
+
+<p>ersetzt.</p>
+
+<h3 id="build-and-install-docker-compose">Build and install docker-compose</h3>
+
+<p>Eine docker-compose Binary zu erstellen ist recht einfach. Zuerst wird ein docker image erstellt, das die generierungs Umgebung enthält. Als zweites wird der container gestartet und die docker-comose Binary erstellt. Am Ende liegt die Binary im Unterverzeichnise <code>dist\</code>.</p>
+
+<pre><code>docker build -t docker-compose:armhf -f Dockerfile.armhf .
+docker run --rm --entrypoint=&quot;script/build/linux-entrypoint&quot; -v $(pwd)/dist:/code/dist -v $(pwd)/.git:/code/.git &quot;docker-compose:armhf&quot;
+</code></pre>
+
+<p>Dies dauert gefühlt eine ewigkeit und kann durchaus 1 oder 2 Stunden dauern. Also erstmal aufstehen und etwas spazieren gehen. Ein bishcen frische Luft tut immer gut.
+Ist der ganze build durchgelaufen, befindet sich im Verzeichnis <code>dist/</code> eine Biärdatei, die auf dein System kopiert wird.</p>
+
+<pre><code>sudo cp dist/docker-compose-Linux-armv7l /usr/local/bin/docker-compose
+sudo chown root:root /usr/local/bin/docker-compose
+sudo chmod 0755 /usr/local/bin/docker-compose
+sudo reboot
+</code></pre>
+
+<p>Nun noch ein Test, ob sich die Mühe auch gelohnt hat ;-)</p>
+
+<pre><code>docker-compose version
+docker-compose version 1.11.0-rc1, build daed6db
+docker-py version: 2.0.2
+CPython version: 2.7.13
+OpenSSL version: OpenSSL 1.0.1t  3 May 2016
+</code></pre>
+
+<p>Dies kann man mit dem Releas aus GitHub vergleichen. <a href="https://github.com/docker/compose/releases">docker/compose/release</a>.</p>
+
+<ul>
+<li>Für ältere Versionen gibt es <a href="https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/">Hier</a> eine gute Anleitung ein Build in einem Container anzustoßen.</li>
+</ul>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+
+        
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="../../docker/rpi_install_docker/" title="Installation"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="../../docker/swarm/" title="swarm" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>    
+
+    <script src="../../js/clipboard.min.js"></script>
+<script src="../../js/featherlight.min.js"></script>
+<script src="../../js/html5shiv-printshiv.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="../../js/modernizr.custom.71422.js"></script>
+<script src="../../js/learn.js"></script>
+<script src="../../js/hugo-learn.js"></script>
+
+
+<link href="../../mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+<script src="../../mermaid/mermaid.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+  </body>
+</html>
+

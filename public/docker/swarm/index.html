@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="de" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.40.3" />
+    <meta name="description" content="Swarm mit Raspberry Pi und Docker-Swarm">
+
+
+    <title>swarm :: Meine Hugo Seite</title>
+    <link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon" />
+    <link href="../../css/nucleus.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/hybrid.css" rel="stylesheet">
+    <link href="../../css/featherlight.min.css" rel="stylesheet">
+    <link href="../../css/horsey.css" rel="stylesheet">
+    
+    <link href="../../css/original.css" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/docker/swarm/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Blume Dokumentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="../../js/lunr.min.js"></script>
+<script type="text/javascript" src="../../js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "\/";
+</script>
+<script type="text/javascript" src="../../js/search.js"></script>
+
+    
+  </div>
+
+  
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="../../"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+        
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/">
+        <span>IT-Struktur</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/fritzbox/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/fritzbox/">
+        <span>FritzBox</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/nginx/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/nginx/">
+        <span>Revers-Proxy</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/letsencrypt/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/letsencrypt/">
+        <span>Let´s Encrypt</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/servername/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/servername/">
+        <span>Server Ports und Namen</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/location/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/location/">
+        <span>Server Unterodrner (locations)</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/proxy/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/proxy/">
+        <span>HTTP Proxy</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/gitlab_domain_subfolder/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/gitlab_domain_subfolder/">
+        <span>GitLab hinter nginx-Revers-Proxy</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/webserver/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/webserver/">
+        <span>WebServer</span>
+
+        
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docker/" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../../docker/">
+        <span>docker</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/rpi_install_docker/" class="dd-item
+     
+      ">
+        <a href="../../docker/rpi_install_docker/">
+        <span>Installation</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/rpi_install_compose/" class="dd-item
+     
+      ">
+        <a href="../../docker/rpi_install_compose/">
+        <span>Installation docker-compose</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/swarm/" class="dd-item
+     active
+      ">
+        <a href="../../docker/swarm/">
+        <span>swarm</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/cluster/" class="dd-item
+     
+      ">
+        <a href="../../docker/cluster/">
+        <span>cluster</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/docker/container/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../docker/container/">
+        <span>container</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/container/rpi-hugo/" class="dd-item
+     
+      ">
+        <a href="../../docker/container/rpi-hugo/">
+        <span>rpi-hugo</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/container/certbot/" class="dd-item
+     
+      ">
+        <a href="../../docker/container/certbot/">
+        <span>certbot-rpi</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/container/pi-hole/" class="dd-item
+     
+      ">
+        <a href="../../docker/container/pi-hole/">
+        <span>pi-hole</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/rpi/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../rpi/">
+        <span>Raspberry Pi</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/configuration/" class="dd-item
+     
+      ">
+        <a href="../../rpi/configuration/">
+        <span>Rpi einrichten</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/ssh_key/" class="dd-item
+     
+      ">
+        <a href="../../rpi/ssh_key/">
+        <span>SSH und keys</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/rpimonitor/" class="dd-item
+     
+      ">
+        <a href="../../rpi/rpimonitor/">
+        <span>RPi-Monitor</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+        
+
+        
+        <section id="shortcuts">
+            
+                <li class="" role="">
+                    <h3>More</h3>
+                    <a href="https://github.com/Grembold/myHugoLP"><i class='fa fa-github'></i> Github repo</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="http://docdock.netlify.com/"><i class='fa fa-bookmark'></i> Docdock Documentation</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="../../impressum/"><i class='fa fa-bullhorn'></i> Impressum</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="../../links/"><i class='fa fa-external-link-square'></i> Links</a>
+                    
+                </li>
+            
+        </section>    
+        
+        
+            <a class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> </a>
+        
+
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+              
+              
+              
+            <div id="top-github-link">
+              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/docker/swarm.md" target="blank">
+                <i class="fa fa-code-fork"></i>
+                
+              </a>
+            </div>
+              
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                <span class="links">
+                
+
+
+
+
+
+
+
+ <a href='../../'>DocDock für Blume</a> > <a href='../../docker/'>docker</a> > swarm
+
+ 
+
+ 
+
+   
+                </span>
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#swarm-mit-raspberry-pi-und-docker">Swarm mit Raspberry Pi und Docker</a></li>
+<li><a href="#teil-1-docker-swarm-initialisieren">Teil 1 - Docker swarm initialisieren</a></li>
+<li><a href="#teil-2-test-demo">Teil 2 - Test / Demo</a>
+<ul>
+<li><a href="#wo-finde-ich-den-swarm-token">Wo finde ich den swarm token</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>swarm</h1>
+          
+
+
+
+
+
+
+<h2 id="swarm-mit-raspberry-pi-und-docker">Swarm mit Raspberry Pi und Docker</h2>
+
+<ul>
+<li><a href="https://www.kuerbis.org/2018/04/howto-nginx-proxy-und-nginx-proxy-companion-im-docker-swarm-mode-auf-einem-host/">Docker Swarm Mode auf einem Host</a> | deutsch | 1. April 2018 | Ralf Geschke</li>
+<li><a href="https://howchoo.com/g/njy4zdm3mwy/how-to-run-a-raspberry-pi-cluster-with-docker-swarm">How to run a Raspberry Pi cluster with Docker Swarm</a></li>
+</ul>
+
+<p>Kommandos auf mehreren pi&rsquo;s ausführen</p>
+
+<ul>
+<li><a href="https://howchoo.com/g/njy4zdm3mwy/how-to-run-a-raspberry-pi-cluster-with-docker-swarm#install-docker-on-each-node">Etwas auf mehreren pi&rsquo;s installieren</a> | deutsch | vom 08.01.2017</li>
+<li><a href="https://42project.net/docker-schwarm-cluster-raspberry-pi-3">Raspberry Pi 3 Model B Docker Schwarm Rechencluster</a></li>
+</ul>
+
+<p>Über den Befehl <code>docker info</code> kann man unter dem Punkt <em>swarm</em> sehen das dieser noch <em>inactive</em> ist.</p>
+
+<h2 id="teil-1-docker-swarm-initialisieren">Teil 1 - Docker swarm initialisieren</h2>
+
+<pre><code>docker swarm init --advertise-addr 192.168.178.2
+</code></pre>
+
+<p>Um einen weiteren manager hinzuzufügen ruf man
+    docker swarm join-token manager
+und befolgt die Anweisungen. Für einen worker entsprechend
+    docker swarm join-token worker</p>
+
+<pre><code>docker swarm join --token SWMTKN-1-3xwnj7ptf9jsn95ehyljc1v4ul9rae69glpo1hhpp3ubirgam7-dcldyqvb7gjwlhgaf7qibhoo4 192.168.178.2:2377
+</code></pre>
+
+<h2 id="teil-2-test-demo">Teil 2 - Test / Demo</h2>
+
+<p><a href="https://github.
+com/ManoMarks/docker-swarm-visualizer#docker-swarm-visualizer">Docker Swarm Visualizer</a> ist ein demo image zu anzeige von Services in einem docker swarm.
+Zum start:</p>
+
+<pre><code>$docker service create \
+ --name=viz \
+ --publish=8080:8080/tcp \
+ --constraint=node.role==manager \
+ --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
+ alexellis2/visualizer-arm:latest
+</code></pre>
+
+<p>Dies wird sicher einige Minuten dauern, da das image erst heruntergeladen werden muss. In der zwischenzeit kann man auf einer zweiten Konsole den Status prüfen:</p>
+
+<pre><code>````
+sudo docker service ls
+```
+</code></pre>
+
+<p>Bis der Service gestartet wurde wird dort <strong>REPLICAS value 0/1</strong> stehen. Sobald der Service bereit ist (es wird <strong><sup>1</sup>&frasl;<sub>1</sub></strong> angezeigt), ist die Webseite unter <a href="192.168.178.5:8080">192.168.178.5:8080</a> (irgend eine IP aus dem swarm) erreichbar</p>
+
+<p><a href="https://hub.docker.com/r/alexellis2/visualizer-arm/tags/">Ansehen auf Docker Hub</a>
+Quelle: <a href="https://howchoo.com/g/njy4zdm3mwy/how-to-run-a-raspberry-pi-cluster-with-docker-swarm">https://howchoo.com/g/njy4zdm3mwy/how-to-run-a-raspberry-pi-cluster-with-docker-swarm</a>  engl. aber ok</p>
+
+<h3 id="wo-finde-ich-den-swarm-token">Wo finde ich den swarm token</h3>
+
+<pre><code>docker swarm join-token manager
+</code></pre>
+
+<p>oder
+    docker swarm join-token worker</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+
+        
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="../../docker/rpi_install_compose/" title="Installation docker-compose"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="../../docker/cluster/" title="cluster" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>    
+
+    <script src="../../js/clipboard.min.js"></script>
+<script src="../../js/featherlight.min.js"></script>
+<script src="../../js/html5shiv-printshiv.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="../../js/modernizr.custom.71422.js"></script>
+<script src="../../js/learn.js"></script>
+<script src="../../js/hugo-learn.js"></script>
+
+
+<link href="../../mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+<script src="../../mermaid/mermaid.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+  </body>
+</html>
+

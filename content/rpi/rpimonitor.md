@@ -1,14 +1,23 @@
 ﻿+++
 title = "RPi-Monitor"
 description = "Anzeigen des aktuellen Gesundheits-Zustand des Rpi"
-weight = 20
+weight = 30
 +++
 
 Der aktuelle Zustand der eigenen Hinbeere lässt sich sehr schön über eine Web-Oberfläche anzeigen. Hierfür habe ich einige dieser Tools aufgeführt. Ausprobiert habe ich nur den RPI-Monitor, da er sehr einfach zu installieren war.  
 
 ## RPi Monitor
 Das Tool von Xavier Berger lässt sich dank umfangreichen Installationsscript sehr leicht installieren. Dies ist auch das einzige Programm das ich sofort zum laufen gebracht habe.
-Eine gute Anleitung zu Installation findet man  [hier](https://github.com/ioBroker/ioBroker/wiki/Raspberry-Pi:-RPi-Monitor-installieren) und [hier](https://jankarres.de/2013/11/raspberry-pi-rpi-monitor-installieren/)
+Eine gute Anleitung zu Installation findet man [hier].  
+UPDATE(2018-05-26): RPI Monitor gibt es nun auch als [Docker image](https://hub.docker.com/r/michaelmiklis/rpi-monitor/)!
+
+RPi-Monitor lässt sich über die beiden DAteien `/etc/rpimonitor/data.conf`und `/etc/rpimonitor/daemon.conf`parametrieren.
+
+
+Container mit Log2Ram erweitern
+    sudo apt install cron
+den rest wie unter RPi einrichten
+(https://github.com/ioBroker/ioBroker/wiki/Raspberry-Pi:-RPi-Monitor-installieren) und [hier](https://jankarres.de/2013/11/raspberry-pi-rpi-monitor-installieren/)
 
 * [RPi-Homepage](http://rpi-experiences.blogspot.de/)
 * [GitHub Soruce](https://github.com/XavierBerger/RPi-Monitor)
@@ -30,7 +39,7 @@ Eine von Willy geschriebene Apache Aplikation als Gesundheitscheck des PI
 
 ## RasPi Check
 RasPi Check ermöglicht die einfache und unkomplizierte Informationsabfrage eines Raspberry Pi vom Android Smartphone aus. Die App verwendet dabei sine SSH verbindung zum Pi.
-Hierbei handelt es sich also um eine Android App und keine WEbseite wie beid den andere Programmen.
+Hierbei handelt es sich also um eine Android App und keine WEbseite wie bei den andere Programmen.
 
 * [RasPi Check on Google play](https://play.google.com/store/apps/details?id=de.eidottermihi.raspicheck)
 * [eidottermihi/rpicheck on GitHub](https://github.com/eidottermihi/rpicheck)

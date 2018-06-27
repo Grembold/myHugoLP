@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="de" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.26" />
+    <meta name="description" content="yum ist der standard package manager für CentOS">
+
+
+    <title>yum :: Meine Hugo Seite</title>
+    <link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon" />
+    <link href="../../css/nucleus.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/hybrid.css" rel="stylesheet">
+    <link href="../../css/featherlight.min.css" rel="stylesheet">
+    <link href="../../css/horsey.css" rel="stylesheet">
+    
+    <link href="../../css/theme.css" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/centos/yum/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p>Blume Dokumentation</p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="../../js/lunr.min.js"></script>
+<script type="text/javascript" src="../../js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "\/";
+</script>
+<script type="text/javascript" src="../../js/search.js"></script>
+
+    
+  </div>
+
+  
+    <ul class="topics">
+        
+            <li data-nav-id="/" class="dd-item">
+            <a href="../../"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+        
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/">
+        <span>IT-Struktur</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/fritzbox/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/fritzbox/">
+        <span>FritzBox</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/nginx/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/nginx/">
+        <span>Revers-Proxy</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/letsencrypt/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/letsencrypt/">
+        <span>Let´s Encrypt</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/servername/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/servername/">
+        <span>Server Ports und Namen</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/location/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/location/">
+        <span>Server Unterodrner (locations)</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/proxy/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/proxy/">
+        <span>HTTP Proxy</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/netzwerk/nginx/gitlab_domain_subfolder/" class="dd-item
+     
+      ">
+        <a href="../../netzwerk/nginx/gitlab_domain_subfolder/">
+        <span>GitLab hinter nginx-Revers-Proxy</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/netzwerk/webserver/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../netzwerk/webserver/">
+        <span>WebServer</span>
+
+        
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/docker/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../docker/">
+        <span>docker</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/rpi-hugo/" class="dd-item
+     
+      ">
+        <a href="../../docker/rpi-hugo/">
+        <span>rpi-hugo</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/docker/certbot/" class="dd-item
+     
+      ">
+        <a href="../../docker/certbot/">
+        <span>certbot-rpi</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/rpi/" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../rpi/">
+        <span>Raspberry Pi</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-right fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/configuration/" class="dd-item
+     
+      ">
+        <a href="../../rpi/configuration/">
+        <span>SSH Konfiguration</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/rpimonitor/" class="dd-item
+     
+      ">
+        <a href="../../rpi/rpimonitor/">
+        <span>RPi-Monitor</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/centos/" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../../centos/">
+        <span>CentOS</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/centos/yum/" class="dd-item
+     active
+      ">
+        <a href="../../centos/yum/">
+        <span>yum</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+        
+
+        
+        <section id="shortcuts">
+            
+                <li class="" role="">
+                    <h3>More</h3>
+                    <a href="https://github.com/Grembold/myHugoLP"><i class='fa fa-github'></i> Github repo</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="http://docdock.netlify.com/"><i class='fa fa-bookmark'></i> Docdock Documentation</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="../../impressum/"><i class='fa fa-bullhorn'></i> Impressum</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="../../links/"><i class='fa fa-external-link-square'></i> Links</a>
+                    
+                </li>
+            
+        </section>    
+        
+        
+            <a class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> </a>
+        
+
+        
+    </ul>
+    
+     
+    <section id="footer">
+      
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+              
+              
+              
+            <div id="top-github-link">
+              <a class="github-link" href="https://github.com/Grembold/myHugoLP/edit/master/content/CentOS/yum.md" target="blank">
+                <i class="fa fa-code-fork"></i>
+                
+              </a>
+            </div>
+              
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                <span class="links">
+                
+
+
+
+
+
+
+
+ <a href='../../'>DocDock für Blume</a> > <a href='../../centos/'>CentOS</a> > yum
+
+ 
+
+ 
+
+   
+                </span>
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#pakete-installieren">Pakete installieren</a></li>
+<li><a href="#pakete-update-einzelnde-bereits-installierte">Pakete update (einzelnde bereits installierte)</a></li>
+<li><a href="#update-aller-pakete">Update aller Pakete</a></li>
+<li><a href="#pakte-entfernen">Pakte entfernen</a></li>
+<li><a href="#pakete-suchen">Pakete suchen</a></li>
+<li><a href="#informationen-anzeigen">Informationen anzeigen</a></li>
+<li><a href="#aufräumen">Aufräumen</a></li>
+<li><a href="#links">Links</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>yum</h1>
+          
+
+
+
+
+
+
+<h3 id="pakete-installieren">Pakete installieren</h3>
+
+<p>Installation von RPMs: <code>yum install Paketname</code></p>
+
+<h3 id="pakete-update-einzelnde-bereits-installierte">Pakete update (einzelnde bereits installierte)</h3>
+
+<p>Update einzelner Pakete (nur bereits installierte Pakete): <code>yum update Paketname</code></p>
+
+<h3 id="update-aller-pakete">Update aller Pakete</h3>
+
+<p>Update aller auf dem System installierten Pakete: <code>yum update</code></p>
+
+<h3 id="pakte-entfernen">Pakte entfernen</h3>
+
+<p>Entfernt ein Paket komplett: <code>yum remove Paketname</code> (Achtung: Dieser Befehl deinstalliert nicht nur das einzelne Paket, sondern auch seine Abhängigkeiten!)
+Deinstallation eines Pakets: <code>yum erase Paketname</code></p>
+
+<h3 id="pakete-suchen">Pakete suchen</h3>
+
+<p>Sucht nach einem Paket: <code>yum search Suchwort</code>
+Welches Paket enthält die Datei oder welches Feature ist vorhanden: <code>yum provides dateiname</code>
+Gibt es dieses Paket überhaupt: <code>yum list *Suchwort*</code></p>
+
+<h3 id="informationen-anzeigen">Informationen anzeigen</h3>
+
+<p>Verfügbare Pakete anzeigen: <code>yum list available</code>
+Updatebare Pakete anzeigen: <code>yum list updates</code>
+Installiere Pakete anzeigen: <code>yum list installed</code>
+Paketinformation: <code>yum info
+Übersicht aller bekannten Repositories</code>yum repolist`</p>
+
+<h3 id="aufräumen">Aufräumen</h3>
+
+<p>Heruntergeladene Pakete wieder löschen: <code>yum clean packages</code>
+System aufräumen : <code>yum clean all</code></p>
+
+<h3 id="links">Links</h3>
+
+<p>Hier ein paar generelle Links zum Thema yum:
+* <a href="https://www.administrator.de/wissen/mini-howto-paketmanager-yum-32.html">https://www.administrator.de/wissen/mini-howto-paketmanager-yum-32.html</a>
+* <a href="http://www.fedorawiki.de/index.php?title=Yum">http://www.fedorawiki.de/index.php?title=Yum</a>
+* <a href="http://www.phy.duke.edu/~rgb/General/yum_HOWTO/yum_HOWTO/">http://www.phy.duke.edu/~rgb/General/yum_HOWTO/yum_HOWTO/</a></p>
+
+<p>Systemupgrade über yum:
+* <a href="http://www.fedorawiki.de/index.php/Systemupgrade_%C3%BCber_yum">http://www.fedorawiki.de/index.php/Systemupgrade_%C3%BCber_yum</a></p>
+
+<p>RPMforge installieren (über 5000 Extrapakete for CentOS z.B. htop)
+* <a href="http://wiki.centos.org/AdditionalResources/Repositories/RPMForge">http://wiki.centos.org/AdditionalResources/Repositories/RPMForge</a></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+
+        
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="../../centos/" title="CentOS"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="../../netzwerk/" title="IT-Struktur" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>    
+
+    <script src="../../js/clipboard.min.js"></script>
+<script src="../../js/featherlight.min.js"></script>
+<script src="../../js/html5shiv-printshiv.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="../../js/modernizr.custom.71422.js"></script>
+<script src="../../js/learn.js"></script>
+<script src="../../js/hugo-learn.js"></script>
+
+
+<link href="../../mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+<script src="../../mermaid/mermaid.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+  </body>
+</html>
+

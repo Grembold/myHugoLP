@@ -21,7 +21,7 @@ lastmodifieremail = "olaf-petersen@gmx.com"
 
 
 ### certbot installieren
-Wie das Docker image installiert wird habe ich bereits [hier]{{< relref "docker/certbot.md" >}} beschrieben. Nun geht es darum ein Zertifikat für die eigene Domain zu erhalten.
+Wie das Docker image installiert wird habe ich bereits [hier]{{< relref "docker/container/certbot.md" >}} beschrieben. Nun geht es darum ein Zertifikat für die eigene Domain zu erhalten.
 
 ### Let´s Encrypt Zertifikate für nginx installieren
 

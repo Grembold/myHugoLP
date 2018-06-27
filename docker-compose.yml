@@ -4,17 +4,29 @@ services:
   doc:
     image: tobi312/rpi-nginx:latest
     restart: always
+    deploy:
+      mode: global                # auf jedem node starten
+      placement:
+        constraints:
+          - node.role == worker  # auf worker einschränken
+      update_config:
+        parallelism: 1            # update immer nur einen zur zeit
+        delay: 10s
+      restart_policy:
+        condition: on-failure    
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=webproxy"
+        - "traefik.public.frontend.rule=Host:doc.blume.goip.de"
+        - "traefik.public.frontend.entryPoints=http,https"
+        - "traefik.basic.frontend.rule=PathPrefixStrip: /doc; Host:server1.blume.home,server2.blume.home,server3.blume.home,server4.blume.home"
+        - "traefik.basic.frontend.entryPoints=intern"
+        - "traefik.port=80"
+        - "traefik.protocol=http"
     networks:
       - webproxy
     volumes:
       - /home/pi/myHugoLP/public:/var/www/html:ro
-    labels:
-      - "traefik.frontend.rule=Host:doc.blume.goip.de"
-      - "traefik.docker.network=webproxy"
-      - "traefik.enable=true"
-      - "traefik.basic.frontend.rule=Host:doc.blume.goip.de"
-      - "traefik.basic.port=80"
-      - "traefik.basic.protocol=http"
 
 networks:
   webproxy:
