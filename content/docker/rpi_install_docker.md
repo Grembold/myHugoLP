@@ -55,10 +55,28 @@ Nun startet man seinen ersten Container mit:
 
     sudo docker run hello-world
 
+## Memory limit und CGroup probleme
+
+Bei einer frischen Installation von Debian bzw. Raspbian ist CGroup deaktiviert. Dadurch kommt es beim ausführen von `docker info` zu folgenden Warnungen.
+
+* WARNING: No memory limit support
+* WARNING: No kernel memory limit support
+
+Außerdem wird bei `docker stats` für Memory immer 0 angezeigt.
+
+Um dies zu beheben sollte man CGroups aktivieren. Dazu einfach am ender der Datei `/boot/cmdline.txt` die Befehle `cgroup_enable=cpuset cgroup_enable=memory`am Ende einfügen.
+
+    sudo nano /boot/cmdline.txt
+
+am Ende `cgroup_enable=cpuset cgroup_enable=memory` einfügen und mit STRG+O speichern. anschliessen den Pi neustarten.
+
+    sudo reboot
+
 QUELLE:
 
 * [Raspberry Pi 3 Model B Docker Schwarm Rechencluster](https://42project.net/docker-schwarm-cluster-raspberry-pi-3/) | deutsch | 08. Januar 2017
 * [How to install Docker on your Raspberry Pi](https://howchoo.com/g/nmrlzmq1ymn/how-to-install-docker-on-your-raspberry-pi) | englisch |  nicht so gut
+* [enabling cgroup memory](https://www.raspberrypi.org/forums/viewtopic.php?t=203128)
 
 ## Fehm, Docker und Raspberry pi
 

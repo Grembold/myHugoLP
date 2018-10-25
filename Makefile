@@ -12,6 +12,9 @@ draft:
 start:
 	docker stack deploy --resolve-image never --compose-file docker-compose.yml myHugoLP
 
+remove:
+	docker stack rm myHugoLP
+
 test:
 	docker-compose up --force-recreate;
 	#docker run --rm -p 1313:1313 -v `pwd`:/www grembold/rpi-hugo server -b http://192.168.178.141 --bind=0.0.0.0 -w -D

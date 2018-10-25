@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.40.3" />
+    <meta name="generator" content="Hugo 0.49.2" />
     <meta name="description" content="Installation von Docker auf dem Raspberry Pi">
 
 
@@ -625,6 +625,26 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/rpi/tricks/" class="dd-item
+     
+      ">
+        <a href="../../rpi/tricks/">
+        <span>tricks</span> 
+        <i style="color:grey" class="fa fa-circle-thin read-icon"></i>
+        </a></li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -732,6 +752,7 @@
 <ul>
 <li><a href="#so-installiert-man-docker-auf-dem-pi">So installiert man Docker auf dem Pi</a></li>
 <li><a href="#erster-container">Erster Container</a></li>
+<li><a href="#memory-limit-und-cgroup-probleme">Memory limit und CGroup probleme</a></li>
 <li><a href="#fehm-docker-und-raspberry-pi">Fehm, Docker und Raspberry pi</a></li>
 </ul></li>
 </ul>
@@ -806,11 +827,33 @@ Server:
 <pre><code>sudo docker run hello-world
 </code></pre>
 
+<h2 id="memory-limit-und-cgroup-probleme">Memory limit und CGroup probleme</h2>
+
+<p>Bei einer frischen Installation von Debian bzw. Raspbian ist CGroup deaktiviert. Dadurch kommt es beim ausführen von <code>docker info</code> zu folgenden Warnungen.</p>
+
+<ul>
+<li>WARNING: No memory limit support</li>
+<li>WARNING: No kernel memory limit support</li>
+</ul>
+
+<p>Außerdem wird bei <code>docker stats</code> für Memory immer 0 angezeigt.</p>
+
+<p>Um dies zu beheben sollte man CGroups aktivieren. Dazu einfach am ender der Datei <code>/boot/cmdline.txt</code> die Befehle <code>cgroup_enable=cpuset cgroup_enable=memory</code>am Ende einfügen.</p>
+
+<pre><code>sudo nano /boot/cmdline.txt
+</code></pre>
+
+<p>am Ende <code>cgroup_enable=cpuset cgroup_enable=memory</code> einfügen und mit STRG+O speichern. anschliessen den Pi neustarten.</p>
+
+<pre><code>sudo reboot
+</code></pre>
+
 <p>QUELLE:</p>
 
 <ul>
 <li><a href="https://42project.net/docker-schwarm-cluster-raspberry-pi-3/">Raspberry Pi 3 Model B Docker Schwarm Rechencluster</a> | deutsch | 08. Januar 2017</li>
 <li><a href="https://howchoo.com/g/nmrlzmq1ymn/how-to-install-docker-on-your-raspberry-pi">How to install Docker on your Raspberry Pi</a> | englisch |  nicht so gut</li>
+<li><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=203128">enabling cgroup memory</a></li>
 </ul>
 
 <h2 id="fehm-docker-und-raspberry-pi">Fehm, Docker und Raspberry pi</h2>
@@ -840,387 +883,6 @@ Server:
         
         
         
-        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
         
         
         

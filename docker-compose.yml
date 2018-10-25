@@ -3,12 +3,15 @@ version: '3'
 services:
   doc:
     image: tobi312/rpi-nginx:latest
-    restart: always
+    #restart: always
     deploy:
-      mode: global                # auf jedem node starten
+      #mode: global                # auf jedem node starten
+      replicas: 1                 # nur einen Service starten
       placement:
         constraints:
-          - node.role == worker  # auf worker einschränken
+          #- node.role == worker  # auf worker einschränken
+          #- node.role == manager  # auf manager nodes einschränken
+          - node.hostname == server4 # auf ein bestimmtes node einschränken
       update_config:
         parallelism: 1            # update immer nur einen zur zeit
         delay: 10s
@@ -17,12 +20,17 @@ services:
       labels:
         - "traefik.enable=true"
         - "traefik.docker.network=webproxy"
-        - "traefik.public.frontend.rule=Host:doc.blume.goip.de"
-        - "traefik.public.frontend.entryPoints=http,https"
-        - "traefik.basic.frontend.rule=PathPrefixStrip: /doc; Host:server1.blume.home,server2.blume.home,server3.blume.home,server4.blume.home"
-        - "traefik.basic.frontend.entryPoints=intern"
         - "traefik.port=80"
         - "traefik.protocol=http"
+        #
+        - "traefik.public.backend=PublicMyHugoLP"        
+        - "traefik.public.frontend.rule=Host:doc.blume.goip.de"
+        - "traefik.public.frontend.entryPoints=http,https"
+#        - "traefik.public.frontend.redirect.entryPoint=https"
+        #
+        - "traefik.intern.backend=InternMyHugoLP"        
+        - "traefik.intern.frontend.rule=HostRegexp: {server:server[1-6]+}.blume.home, {server:server[1-6]}; PathPrefixStrip: /doc/"
+        - "traefik.intern.frontend.entryPoints=intern"
     networks:
       - webproxy
     volumes:
