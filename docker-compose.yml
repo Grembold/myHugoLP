@@ -29,7 +29,11 @@ services:
 #        - "traefik.public.frontend.redirect.entryPoint=https"
         #
         - "traefik.intern.backend=InternMyHugoLP"        
-        - "traefik.intern.frontend.rule=HostRegexp: {server:server[1-6]+}.blume.home, {server:server[1-6]}; PathPrefixStrip: /doc/"
+        - "traefik.intern.frontend.redirect.regex=^(.*)/doc$$"
+        - "traefik.intern.frontend.redirect.replacement=$$1/doc/"
+        - "traefik.intern.frontend.rule=PathPrefix:/doc;ReplacePathRegex: ^/doc/(.*) /$$1"
+#        - "traefik.intern.frontend.rule=HostRegexp: {server:server[1-6]+}.blume.home, {server:server[1-6]}; PathPrefixStrip: /doc/"
+        - "traefik.intern.frontend.rule=HostRegexp: {server:server[1-6]+}.blume.home, {server:server[1-6]}; PathPrefix:/doc;ReplacePathRegex: ^/doc/(.*) /$$1"
         - "traefik.intern.frontend.entryPoints=intern"
     networks:
       - webproxy
